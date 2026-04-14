@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>レビューについて | 個別指導レビュー</title>
+  <meta name="description" content="個別指導レビューの特長やご入会の流れ、時間割をご紹介。先生1人に生徒2人の個別指導で、成績アップをサポートします。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Page Hero */
+    .page-hero {
+      margin-top: var(--header-height);
+      background-color: var(--color-bg-warm);
+      padding: 60px 0;
+      text-align: center;
+    }
+    .page-hero__title {
+      font-size: 1.75rem;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text-primary);
+      margin-bottom: 4px;
+    }
+    .page-hero__subtitle {
+      font-size: 0.875rem;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-primary);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* About Features */
+    .about-features__desc {
+      text-align: center;
+      font-size: 1rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 40px;
+      line-height: 1.8;
+    }
+    .about-features__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .about-feature-card {
+      background: var(--color-bg-base);
+      border-radius: var(--border-radius-md);
+      padding: 32px 24px;
+      box-shadow: var(--shadow-card);
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+    .about-feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+    .about-feature-card__number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: var(--color-primary);
+      color: var(--color-text-inverse);
+      font-size: 1rem;
+      font-weight: var(--font-weight-bold);
+      border-radius: 50%;
+      margin-bottom: 16px;
+    }
+    .about-feature-card__title {
+      font-size: 1.0625rem;
+      font-weight: var(--font-weight-bold);
+      margin-bottom: 12px;
+      line-height: 1.4;
+      color: var(--color-text-primary);
+    }
+    .about-feature-card__text {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+
+    /* Enrollment Steps */
+    .enrollment-steps {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .enrollment-step {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .enrollment-step__number {
+      flex-shrink: 0;
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+      color: var(--color-text-inverse);
+      font-size: 1.5rem;
+      font-weight: var(--font-weight-bold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .enrollment-step__content {
+      flex: 1;
+    }
+    .enrollment-step__title {
+      font-size: 1.125rem;
+      font-weight: var(--font-weight-bold);
+      margin-bottom: 8px;
+      color: var(--color-text-primary);
+    }
+    .enrollment-step__text {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+
+    /* Timetable */
+    .timetable-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border-radius: var(--border-radius-sm);
+      box-shadow: var(--shadow-card);
+    }
+    .timetable {
+      width: 100%;
+      min-width: 500px;
+      border-collapse: collapse;
+      font-size: 0.9375rem;
+    }
+    .timetable thead th {
+      background-color: var(--color-primary);
+      color: var(--color-text-inverse);
+      font-weight: var(--font-weight-bold);
+      padding: 14px 12px;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .timetable tbody td {
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+      white-space: nowrap;
+    }
+    .timetable tbody tr:hover {
+      background-color: var(--color-bg-warm);
+    }
+    .timetable tbody td:first-child,
+    .timetable tbody td:nth-child(2) {
+      font-weight: var(--font-weight-bold);
+      text-align: left;
+    }
+    .timetable-note {
+      margin-top: 16px;
+      font-size: 0.8125rem;
+      color: var(--color-text-secondary);
+    }
+
+    /* Footer overrides for subpage */
+    .footer__logo {
+      margin-bottom: 12px;
+    }
+    .footer__logo-main {
+      display: block;
+      font-size: 1.25rem;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-primary-light);
+    }
+    .footer__logo-sub {
+      display: block;
+      font-size: 0.6875rem;
+      opacity: 0.7;
+    }
+    .footer__address,
+    .footer__tel,
+    .footer__email,
+    .footer__hours {
+      font-size: 0.8125rem;
+      line-height: 1.8;
+      opacity: 0.8;
+    }
+    .footer__tel a,
+    .footer__email a {
+      color: var(--color-primary-light);
+    }
+    .footer__nav ul {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer__nav a {
+      font-size: 0.8125rem;
+      opacity: 0.8;
+      transition: opacity var(--transition-base);
+    }
+    .footer__nav a:hover {
+      opacity: 1;
+      color: var(--color-primary-light);
+    }
+    .footer__copy {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 20px 0;
+      text-align: center;
+    }
+    .footer__copy p {
+      font-size: 0.75rem;
+      opacity: 0.6;
+    }
+
+    @media (min-width: 768px) {
+      .page-hero__title {
+        font-size: 2rem;
+      }
+      .about-features__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .enrollment-steps {
+        gap: 40px;
+      }
+      .footer__inner {
+        grid-template-columns: 1.5fr 1fr;
+      }
+    }
+    @media (min-width: 1024px) {
+      .about-features__grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .page-hero {
+        padding: 80px 0;
+      }
+      .page-hero__title {
+        font-size: 2.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header__inner container">
+      <div class="header__logo">
+        <a href="index.html">
+          <span class="header__logo-main">個別指導レビュー</span>
+          <span class="header__logo-sub">学校成績保証の個別指導塾</span>
+        </a>
+      </div>
+      <nav class="header__nav" id="nav">
+        <ul class="header__nav-list">
+          <li><a href="about.html" class="header__nav-link">レビューについて</a></li>
+          <li><a href="course.html" class="header__nav-link">コース案内</a></li>
+          <li><a href="program.html" class="header__nav-link">プログラミング</a></li>
+          <li><a href="charge.html" class="header__nav-link">料金案内</a></li>
+          <li><a href="access.html" class="header__nav-link">教室案内</a></li>
+          <li><a href="inquiry.html" class="header__nav-link">お問合せ</a></li>
+        </ul>
+      </nav>
+      <div class="header__cta">
+        <a href="tel:0866-95-2100" class="header__cta-tel"><i class="fas fa-phone-alt"></i> 0866-95-2100</a>
+        <a href="inquiry.html" class="header__cta-contact"><i class="fas fa-envelope"></i> お問合せ</a>
+      </div>
+      <button class="hamburger" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu__overlay" aria-hidden="true"></div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="モバイルナビゲーション">
+    <ul class="mobile-menu__list">
+      <li><a href="about.html" class="mobile-menu__link">レビューについて</a></li>
+      <li><a href="course.html" class="mobile-menu__link">コース案内</a></li>
+      <li><a href="program.html" class="mobile-menu__link">プログラミング</a></li>
+      <li><a href="charge.html" class="mobile-menu__link">料金</a></li>
+      <li><a href="access.html" class="mobile-menu__link">教室案内</a></li>
+      <li><a href="inquiry.html" class="mobile-menu__link">お問合せ</a></li>
+    </ul>
+    <div class="mobile-menu__cta">
+      <a href="tel:0866952100" class="mobile-menu__cta-btn mobile-menu__cta-btn--tel">
+        <i class="fas fa-phone-alt"></i>
+        0866-95-2100
+      </a>
+      <a href="inquiry.html" class="mobile-menu__cta-btn mobile-menu__cta-btn--contact">
+        <i class="fas fa-envelope"></i>
+        お問合せはこちら
+      </a>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero__title">レビューについて</h1>
+      <p class="page-hero__subtitle">About Us</p>
+    </div>
+  </section>
+
+  <!-- Section: Features -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-label">特長</span>
+        <h2>
+          <span class="section-heading__ja">ここが違う！レビューの個別指導！</span>
+          <span class="section-heading__en">Our Strengths</span>
+        </h2>
+      </div>
+      <p class="about-features__desc">大手個別指導塾で長年培ってきた経験と実績から生まれた個別指導システムです。</p>
+      <div class="about-features__grid">
+        <div class="about-feature-card js-fade-in">
+          <span class="about-feature-card__number">1</span>
+          <h3 class="about-feature-card__title">先生1人に生徒2人の個別授業</h3>
+          <p class="about-feature-card__text">映像個別、満点コースは1:4。生徒の依存心が高まらず、しっかり授業が行き届く。指導する時は1対1の個別指導で自分のペースで学習できる。</p>
+        </div>
+        <div class="about-feature-card js-fade-in">
+          <span class="about-feature-card__number">2</span>
+          <h3 class="about-feature-card__title">受講教科も曜日・時間帯・回数も自由選択</h3>
+          <p class="about-feature-card__text">クラブ活動・習い事との両立が可能。やりたい教科や都合のよい通塾曜日・時間帯・回数が選べる。</p>
+        </div>
+        <div class="about-feature-card js-fade-in">
+          <span class="about-feature-card__number">3</span>
+          <h3 class="about-feature-card__title">1人ひとりにピッタリの個別カリキュラム</h3>
+          <p class="about-feature-card__text">苦手科目の克服、テスト対策など目標や学力に合わせた個別カリキュラムを作成。</p>
+        </div>
+        <div class="about-feature-card js-fade-in">
+          <span class="about-feature-card__number">4</span>
+          <h3 class="about-feature-card__title">講師+アドバイザーのダブルサポート</h3>
+          <p class="about-feature-card__text">授業を教える先生以外に専任の教育アドバイザーがいる。学力や目的・性格に合った勉強の仕方や進路相談。</p>
+        </div>
+        <div class="about-feature-card js-fade-in">
+          <span class="about-feature-card__number">5</span>
+          <h3 class="about-feature-card__title">家庭学習指導とテスト対策で成績アップをサポート</h3>
+          <p class="about-feature-card__text">家庭学習による学習習慣定着と、試験対策授業、テスト対策勉強会。</p>
+        </div>
+        <div class="about-feature-card js-fade-in">
+          <span class="about-feature-card__number">6</span>
+          <h3 class="about-feature-card__title">授業がない日でも無料で勉強できる快適自習空間</h3>
+          <p class="about-feature-card__text">塾を「快適な勉強部屋」として利用可能。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Enrollment -->
+  <section class="section section--warm">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-label">入会</span>
+        <h2>
+          <span class="section-heading__ja">ご入会について</span>
+          <span class="section-heading__en">Enrollment</span>
+        </h2>
+      </div>
+      <div class="enrollment-steps">
+        <div class="enrollment-step js-fade-in">
+          <div class="enrollment-step__number">1</div>
+          <div class="enrollment-step__content">
+            <h3 class="enrollment-step__title">現状を把握します</h3>
+            <p class="enrollment-step__text">学習状況・日常生活をヒアリング、成績資料から課題を分析します。</p>
+          </div>
+        </div>
+        <div class="enrollment-step js-fade-in">
+          <div class="enrollment-step__number">2</div>
+          <div class="enrollment-step__content">
+            <h3 class="enrollment-step__title">成績の上げ方を提示</h3>
+            <p class="enrollment-step__text">何が原因で伸び悩んでいるか、具体的な勉強法を提示します。</p>
+          </div>
+        </div>
+        <div class="enrollment-step js-fade-in">
+          <div class="enrollment-step__number">3</div>
+          <div class="enrollment-step__content">
+            <h3 class="enrollment-step__title">成績が上がるまでトコトン指導</h3>
+            <p class="enrollment-step__text">目標点達成まで補習・自習指導を含めトコトン指導します。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Timetable -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-label">時間割</span>
+        <h2>
+          <span class="section-heading__ja">時間割</span>
+          <span class="section-heading__en">Timetable</span>
+        </h2>
+      </div>
+      <div class="timetable-wrapper">
+        <table class="timetable">
+          <thead>
+            <tr>
+              <th>区分</th>
+              <th>授業時間帯</th>
+              <th>月</th>
+              <th>火</th>
+              <th>水</th>
+              <th>木</th>
+              <th>金</th>
+              <th>土</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1講</td>
+              <td>14:40〜15:40</td>
+              <td>△</td>
+              <td>△</td>
+              <td>△</td>
+              <td>△</td>
+              <td>△</td>
+              <td>●</td>
+            </tr>
+            <tr>
+              <td>2講</td>
+              <td>15:50〜16:50</td>
+              <td>△</td>
+              <td>△</td>
+              <td>△</td>
+              <td>△</td>
+              <td>△</td>
+              <td>●</td>
+            </tr>
+            <tr>
+              <td>3講</td>
+              <td>17:00〜18:00</td>
+              <td>●</td>
+              <td>●</td>
+              <td>●</td>
+              <td>●</td>
+              <td>●</td>
+              <td>●</td>
+            </tr>
+            <tr>
+              <td>4講</td>
+              <td>18:10〜19:10</td>
+              <td>●</td>
+              <td>●</td>
+              <td>●</td>
+              <td>●</td>
+              <td>●</td>
+              <td>●</td>
+            </tr>
+            <tr>
+              <td>5講</td>
+              <td>19:20〜20:20</td>
+              <td>●</td>
+              <td>●</td>
+              <td>●</td>
+              <td>●</td>
+              <td>●</td>
+              <td>△</td>
+            </tr>
+            <tr>
+              <td>6講</td>
+              <td>20:30〜21:30</td>
+              <td>●</td>
+              <td>●</td>
+              <td>●</td>
+              <td>●</td>
+              <td>●</td>
+              <td>△</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="timetable-note">※ ●印＝通常開講、△＝講習期間開講</p>
+    </div>
+  </section>
+
+  <!-- CTA Band -->
+  <section class="cta-band">
+    <div class="container">
+      <p class="cta-band__text">まずはお気軽にお問合せください</p>
+      <div class="cta-band__buttons">
+        <a href="tel:0866-95-2100" class="cta-band__btn cta-band__btn--tel"><i class="fas fa-phone-alt"></i> 0866-95-2100</a>
+        <a href="inquiry.html" class="cta-band__btn cta-band__btn--contact"><i class="fas fa-envelope"></i> お問合せはこちら</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__inner container">
+      <div class="footer__info">
+        <div class="footer__logo">
+          <span class="footer__logo-main">個別指導レビュー</span>
+          <span class="footer__logo-sub">学校成績保証の個別指導塾</span>
+        </div>
+        <p class="footer__address">〒719-1136 岡山県総社市駅前2-2-10 新世紀観光ビル2F</p>
+        <p class="footer__tel">TEL: <a href="tel:0866-95-2100">0866-95-2100</a></p>
+        <p class="footer__email">Email: <a href="mailto:review@kir.biglobe.ne.jp">review@kir.biglobe.ne.jp</a></p>
+        <p class="footer__hours">受付時間: 14:00〜21:00</p>
+      </div>
+      <nav class="footer__nav">
+        <ul>
+          <li><a href="index.html">トップ</a></li>
+          <li><a href="about.html">レビューについて</a></li>
+          <li><a href="course.html">コース案内</a></li>
+          <li><a href="program.html">プログラミング</a></li>
+          <li><a href="charge.html">料金案内</a></li>
+          <li><a href="access.html">教室案内</a></li>
+          <li><a href="inquiry.html">お問合せ</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer__copy">
+      <p>&copy; 2012 個別指導レビュー All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

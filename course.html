@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>コース案内 | 個別指導レビュー</title>
+  <meta name="description" content="個別指導レビューのコース案内。小学生・中学生・高校生それぞれに最適な個別指導コースをご用意しています。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Page Hero */
+    .page-hero {
+      margin-top: var(--header-height);
+      background-color: var(--color-bg-warm);
+      padding: 60px 0;
+      text-align: center;
+    }
+    .page-hero__title {
+      font-size: 1.75rem;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text-primary);
+      margin-bottom: 4px;
+    }
+    .page-hero__subtitle {
+      font-size: 0.875rem;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-primary);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* Course Detail */
+    .course-section {
+      padding: 80px 0;
+    }
+    .course-section:nth-child(even) {
+      background-color: var(--color-bg-warm);
+    }
+    .course-intro {
+      text-align: center;
+      font-size: 1rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 48px;
+      line-height: 1.8;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Course Category Header */
+    .course-category {
+      margin-bottom: 60px;
+    }
+    .course-category__header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+      padding-bottom: 16px;
+      border-bottom: 3px solid;
+    }
+    .course-category__header--junior {
+      border-color: var(--color-course-junior);
+    }
+    .course-category__header--elementary {
+      border-color: var(--color-course-elementary);
+    }
+    .course-category__header--senior {
+      border-color: var(--color-course-senior);
+    }
+    .course-category__header--speed {
+      border-color: var(--color-primary);
+    }
+    .course-category__icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-inverse);
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+    .course-category__icon--junior { background-color: var(--color-course-junior); }
+    .course-category__icon--elementary { background-color: var(--color-course-elementary); }
+    .course-category__icon--senior { background-color: var(--color-course-senior); }
+    .course-category__icon--speed { background-color: var(--color-primary); }
+    .course-category__title {
+      font-size: 1.5rem;
+      font-weight: var(--font-weight-bold);
+    }
+
+    /* Course Detail Cards */
+    .course-detail-card {
+      background: var(--color-bg-base);
+      border-radius: var(--border-radius-md);
+      padding: 32px 28px;
+      box-shadow: var(--shadow-card);
+      margin-bottom: 24px;
+    }
+    .course-detail-card__title {
+      font-size: 1.125rem;
+      font-weight: var(--font-weight-bold);
+      margin-bottom: 16px;
+      color: var(--color-text-primary);
+      line-height: 1.4;
+    }
+    .course-detail-card__text {
+      font-size: 0.9375rem;
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    .course-detail-card__text:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Guarantee Badge */
+    .guarantee-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--color-course-junior), #2fa84a);
+      color: var(--color-text-inverse);
+      padding: 12px 24px;
+      border-radius: var(--border-radius-pill);
+      font-weight: var(--font-weight-bold);
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    /* Feature List */
+    .feature-list {
+      list-style: none;
+      padding: 0;
+    }
+    .feature-list li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 12px;
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: var(--color-text-secondary);
+    }
+    .feature-list li::before {
+      content: "\f00c";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      color: var(--color-primary);
+      font-size: 0.875rem;
+    }
+
+    /* Recommend List */
+    .recommend-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .recommend-list__item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--color-bg-warm);
+      padding: 14px 18px;
+      border-radius: var(--border-radius-sm);
+      font-size: 0.9375rem;
+    }
+    .recommend-list__item i {
+      color: var(--color-primary);
+      flex-shrink: 0;
+    }
+
+    /* Footer */
+    .footer__logo { margin-bottom: 12px; }
+    .footer__logo-main { display: block; font-size: 1.25rem; font-weight: var(--font-weight-bold); color: var(--color-primary-light); }
+    .footer__logo-sub { display: block; font-size: 0.6875rem; opacity: 0.7; }
+    .footer__address, .footer__tel, .footer__email, .footer__hours { font-size: 0.8125rem; line-height: 1.8; opacity: 0.8; }
+    .footer__tel a, .footer__email a { color: var(--color-primary-light); }
+    .footer__nav ul { display: flex; flex-direction: column; gap: 10px; }
+    .footer__nav a { font-size: 0.8125rem; opacity: 0.8; transition: opacity var(--transition-base); }
+    .footer__nav a:hover { opacity: 1; color: var(--color-primary-light); }
+    .footer__copy { border-top: 1px solid rgba(255,255,255,0.1); padding: 20px 0; text-align: center; }
+    .footer__copy p { font-size: 0.75rem; opacity: 0.6; }
+
+    @media (min-width: 768px) {
+      .page-hero__title { font-size: 2rem; }
+      .course-category__title { font-size: 1.75rem; }
+      .recommend-list { grid-template-columns: repeat(2, 1fr); }
+      .footer__inner { grid-template-columns: 1.5fr 1fr; }
+    }
+    @media (min-width: 1024px) {
+      .page-hero { padding: 80px 0; }
+      .page-hero__title { font-size: 2.25rem; }
+      .course-section { padding: 100px 0; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header__inner container">
+      <div class="header__logo">
+        <a href="index.html">
+          <span class="header__logo-main">個別指導レビュー</span>
+          <span class="header__logo-sub">学校成績保証の個別指導塾</span>
+        </a>
+      </div>
+      <nav class="header__nav" id="nav">
+        <ul class="header__nav-list">
+          <li><a href="about.html" class="header__nav-link">レビューについて</a></li>
+          <li><a href="course.html" class="header__nav-link">コース案内</a></li>
+          <li><a href="program.html" class="header__nav-link">プログラミング</a></li>
+          <li><a href="charge.html" class="header__nav-link">料金案内</a></li>
+          <li><a href="access.html" class="header__nav-link">教室案内</a></li>
+          <li><a href="inquiry.html" class="header__nav-link">お問合せ</a></li>
+        </ul>
+      </nav>
+      <div class="header__cta">
+        <a href="tel:0866-95-2100" class="header__cta-tel"><i class="fas fa-phone-alt"></i> 0866-95-2100</a>
+        <a href="inquiry.html" class="header__cta-contact"><i class="fas fa-envelope"></i> お問合せ</a>
+      </div>
+      <button class="hamburger" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu__overlay" aria-hidden="true"></div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="モバイルナビゲーション">
+    <ul class="mobile-menu__list">
+      <li><a href="about.html" class="mobile-menu__link">レビューについて</a></li>
+      <li><a href="course.html" class="mobile-menu__link">コース案内</a></li>
+      <li><a href="program.html" class="mobile-menu__link">プログラミング</a></li>
+      <li><a href="charge.html" class="mobile-menu__link">料金</a></li>
+      <li><a href="access.html" class="mobile-menu__link">教室案内</a></li>
+      <li><a href="inquiry.html" class="mobile-menu__link">お問合せ</a></li>
+    </ul>
+    <div class="mobile-menu__cta">
+      <a href="tel:0866952100" class="mobile-menu__cta-btn mobile-menu__cta-btn--tel">
+        <i class="fas fa-phone-alt"></i>
+        0866-95-2100
+      </a>
+      <a href="inquiry.html" class="mobile-menu__cta-btn mobile-menu__cta-btn--contact">
+        <i class="fas fa-envelope"></i>
+        お問合せはこちら
+      </a>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero__title">コース案内</h1>
+      <p class="page-hero__subtitle">Our Courses</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="course-section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-label">コース</span>
+        <h2>
+          <span class="section-heading__ja">個別指導コース</span>
+          <span class="section-heading__en">Course Lineup</span>
+        </h2>
+      </div>
+      <p class="course-intro">個別指導のレビューは学校のテスト対策に特化した個別指導塾。成績が上がるまでトコトン指導します！</p>
+
+      <!-- Junior High -->
+      <div class="course-category js-fade-in">
+        <div class="course-category__header course-category__header--junior">
+          <div class="course-category__icon course-category__icon--junior"><i class="fas fa-graduation-cap"></i></div>
+          <h3 class="course-category__title">中学生コース</h3>
+        </div>
+        <div class="guarantee-badge"><i class="fas fa-shield-halved"></i> 学校成績UP保証制度</div>
+        <div class="course-detail-card">
+          <h4 class="course-detail-card__title">地元中学に強い！！学校成績UP保証制度</h4>
+          <p class="course-detail-card__text">入塾後2学期以内に学校定期テストで<strong>+20点以上</strong>を保証します。クリアできない場合は<strong>無料で補習</strong>いたします。</p>
+        </div>
+        <div class="course-detail-card">
+          <h4 class="course-detail-card__title">中学生5教科セットコース</h4>
+          <p class="course-detail-card__text">英語＋数学＋理科＋国社の個別授業で、5教科をバランスよく学習できます。</p>
+        </div>
+        <div class="course-detail-card">
+          <h4 class="course-detail-card__title">テスト対策</h4>
+          <p class="course-detail-card__text">テスト2週間前から無料「テスト対策勉強会」を実施。直前の土日は「テスト対策ゼミ」で徹底対策します。</p>
+        </div>
+      </div>
+
+      <!-- Elementary -->
+      <div class="course-category js-fade-in">
+        <div class="course-category__header course-category__header--elementary">
+          <div class="course-category__icon course-category__icon--elementary"><i class="fas fa-child"></i></div>
+          <h3 class="course-category__title">小学生コース</h3>
+        </div>
+        <div class="course-detail-card">
+          <h4 class="course-detail-card__title">満点コース（先生1:生徒4）</h4>
+          <p class="course-detail-card__text">学校の教科書に完全準拠。基礎をしっかり固め、テストで満点を目指すコースです。</p>
+        </div>
+        <div class="course-detail-card">
+          <h4 class="course-detail-card__title">教科書徹底コース</h4>
+          <p class="course-detail-card__text">教科書内容をしっかり理解し、学校の授業についていける力を養います。</p>
+        </div>
+        <div class="course-detail-card">
+          <h4 class="course-detail-card__title">小学生英語</h4>
+          <p class="course-detail-card__text">1年生から対応。早期から英語に触れることで、中学英語への準備を万全にします。</p>
+        </div>
+      </div>
+
+      <!-- Senior High -->
+      <div class="course-category js-fade-in">
+        <div class="course-category__header course-category__header--senior">
+          <div class="course-category__icon course-category__icon--senior"><i class="fas fa-university"></i></div>
+          <h3 class="course-category__title">高校生コース</h3>
+        </div>
+        <div class="course-detail-card">
+          <h4 class="course-detail-card__title">映像個別コース</h4>
+          <p class="course-detail-card__text">予備校トップ講師の映像授業＋個別指導の組み合わせ。映像授業＋個別授業＋家庭PC/スマホ視聴で効率的に学習できます。</p>
+        </div>
+        <div class="course-detail-card">
+          <ul class="feature-list">
+            <li>予備校一流講師の授業が見放題（定額）</li>
+            <li>映像授業に個別指導講師がつくのはレビューだけ</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Speed Reading -->
+      <div class="course-category js-fade-in">
+        <div class="course-category__header course-category__header--speed">
+          <div class="course-category__icon course-category__icon--speed"><i class="fas fa-bolt"></i></div>
+          <h3 class="course-category__title">速読解・思考力コース</h3>
+        </div>
+        <div class="course-detail-card">
+          <h4 class="course-detail-card__title">速読解力講座</h4>
+          <p class="course-detail-card__text">読む速度を加速し、読解力を身につける講座です。</p>
+        </div>
+        <div class="course-detail-card">
+          <h4 class="course-detail-card__title">思考力講座</h4>
+          <p class="course-detail-card__text">多角的に考える力、空間認識力を向上させます。</p>
+        </div>
+        <div class="course-detail-card">
+          <h4 class="course-detail-card__title">こんなキミにおすすめ</h4>
+          <div class="recommend-list">
+            <div class="recommend-list__item"><i class="fas fa-check-circle"></i> 集中力が続かない</div>
+            <div class="recommend-list__item"><i class="fas fa-check-circle"></i> 暗記が苦手</div>
+            <div class="recommend-list__item"><i class="fas fa-check-circle"></i> テストで時間が足りない</div>
+            <div class="recommend-list__item"><i class="fas fa-check-circle"></i> 文章問題が苦手</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Band -->
+  <section class="cta-band">
+    <div class="container">
+      <p class="cta-band__text">まずはお気軽にお問合せください</p>
+      <div class="cta-band__buttons">
+        <a href="tel:0866-95-2100" class="cta-band__btn cta-band__btn--tel"><i class="fas fa-phone-alt"></i> 0866-95-2100</a>
+        <a href="inquiry.html" class="cta-band__btn cta-band__btn--contact"><i class="fas fa-envelope"></i> お問合せはこちら</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__inner container">
+      <div class="footer__info">
+        <div class="footer__logo">
+          <span class="footer__logo-main">個別指導レビュー</span>
+          <span class="footer__logo-sub">学校成績保証の個別指導塾</span>
+        </div>
+        <p class="footer__address">〒719-1136 岡山県総社市駅前2-2-10 新世紀観光ビル2F</p>
+        <p class="footer__tel">TEL: <a href="tel:0866-95-2100">0866-95-2100</a></p>
+        <p class="footer__email">Email: <a href="mailto:review@kir.biglobe.ne.jp">review@kir.biglobe.ne.jp</a></p>
+        <p class="footer__hours">受付時間: 14:00〜21:00</p>
+      </div>
+      <nav class="footer__nav">
+        <ul>
+          <li><a href="index.html">トップ</a></li>
+          <li><a href="about.html">レビューについて</a></li>
+          <li><a href="course.html">コース案内</a></li>
+          <li><a href="program.html">プログラミング</a></li>
+          <li><a href="charge.html">料金案内</a></li>
+          <li><a href="access.html">教室案内</a></li>
+          <li><a href="inquiry.html">お問合せ</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer__copy">
+      <p>&copy; 2012 個別指導レビュー All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

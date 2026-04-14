@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>教室案内 | 個別指導レビュー</title>
+  <meta name="description" content="個別指導レビュー総社駅前校のアクセス・教室情報。総社駅東口から徒歩4分。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Page Hero */
+    .page-hero {
+      margin-top: var(--header-height);
+      background-color: var(--color-bg-warm);
+      padding: 60px 0;
+      text-align: center;
+    }
+    .page-hero__title {
+      font-size: 1.75rem;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text-primary);
+      margin-bottom: 4px;
+    }
+    .page-hero__subtitle {
+      font-size: 0.875rem;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-primary);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* Access Layout */
+    .access-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    /* Info Card */
+    .info-card {
+      background: var(--color-bg-base);
+      border-radius: var(--border-radius-md);
+      padding: 36px 28px;
+      box-shadow: var(--shadow-card);
+    }
+    .info-card__title {
+      font-size: 1.375rem;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-primary);
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--color-primary);
+    }
+    .info-card__row {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 18px;
+      font-size: 0.9375rem;
+      line-height: 1.7;
+    }
+    .info-card__row:last-child {
+      margin-bottom: 0;
+    }
+    .info-card__row i {
+      color: var(--color-primary);
+      width: 20px;
+      text-align: center;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+    .info-card__badge {
+      display: inline-block;
+      background-color: var(--color-primary);
+      color: var(--color-text-inverse);
+      font-size: 0.75rem;
+      font-weight: var(--font-weight-bold);
+      padding: 3px 10px;
+      border-radius: 4px;
+      margin-top: 8px;
+    }
+
+    /* Hours Table */
+    .hours-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 0.9375rem;
+    }
+    .hours-table td {
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .hours-table td:first-child {
+      font-weight: var(--font-weight-bold);
+      width: 100px;
+    }
+    .hours-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Map */
+    .access-map {
+      border-radius: var(--border-radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+    }
+    .access-map iframe {
+      display: block;
+      width: 100%;
+      height: 350px;
+      border: none;
+    }
+    .access-direction {
+      background: var(--color-bg-base);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9375rem;
+      font-weight: var(--font-weight-bold);
+    }
+    .access-direction i {
+      color: var(--color-primary);
+      font-size: 1.25rem;
+    }
+
+    /* Schools Section */
+    .schools-section {
+      padding: 80px 0;
+      background-color: var(--color-bg-warm);
+    }
+    .schools-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .school-card {
+      background: var(--color-bg-base);
+      border-radius: var(--border-radius-md);
+      padding: 28px 24px;
+      box-shadow: var(--shadow-card);
+    }
+    .school-card__header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .school-card__icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-inverse);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .school-card__icon--elementary { background-color: var(--color-course-elementary); }
+    .school-card__icon--junior { background-color: var(--color-course-junior); }
+    .school-card__icon--senior { background-color: var(--color-course-senior); }
+    .school-card__title {
+      font-size: 1.0625rem;
+      font-weight: var(--font-weight-bold);
+    }
+    .school-card__list {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+    }
+
+    /* Footer */
+    .footer__logo { margin-bottom: 12px; }
+    .footer__logo-main { display: block; font-size: 1.25rem; font-weight: var(--font-weight-bold); color: var(--color-primary-light); }
+    .footer__logo-sub { display: block; font-size: 0.6875rem; opacity: 0.7; }
+    .footer__address, .footer__tel, .footer__email, .footer__hours { font-size: 0.8125rem; line-height: 1.8; opacity: 0.8; }
+    .footer__tel a, .footer__email a { color: var(--color-primary-light); }
+    .footer__nav ul { display: flex; flex-direction: column; gap: 10px; }
+    .footer__nav a { font-size: 0.8125rem; opacity: 0.8; transition: opacity var(--transition-base); }
+    .footer__nav a:hover { opacity: 1; color: var(--color-primary-light); }
+    .footer__copy { border-top: 1px solid rgba(255,255,255,0.1); padding: 20px 0; text-align: center; }
+    .footer__copy p { font-size: 0.75rem; opacity: 0.6; }
+
+    @media (min-width: 768px) {
+      .page-hero__title { font-size: 2rem; }
+      .access-layout { grid-template-columns: 1fr 1fr; align-items: start; }
+      .access-map iframe { height: 400px; }
+      .schools-grid { grid-template-columns: repeat(3, 1fr); }
+      .footer__inner { grid-template-columns: 1.5fr 1fr; }
+    }
+    @media (min-width: 1024px) {
+      .page-hero { padding: 80px 0; }
+      .page-hero__title { font-size: 2.25rem; }
+      .schools-section { padding: 100px 0; }
+      .access-map iframe { height: 450px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header__inner container">
+      <div class="header__logo">
+        <a href="index.html">
+          <span class="header__logo-main">個別指導レビュー</span>
+          <span class="header__logo-sub">学校成績保証の個別指導塾</span>
+        </a>
+      </div>
+      <nav class="header__nav" id="nav">
+        <ul class="header__nav-list">
+          <li><a href="about.html" class="header__nav-link">レビューについて</a></li>
+          <li><a href="course.html" class="header__nav-link">コース案内</a></li>
+          <li><a href="program.html" class="header__nav-link">プログラミング</a></li>
+          <li><a href="charge.html" class="header__nav-link">料金案内</a></li>
+          <li><a href="access.html" class="header__nav-link">教室案内</a></li>
+          <li><a href="inquiry.html" class="header__nav-link">お問合せ</a></li>
+        </ul>
+      </nav>
+      <div class="header__cta">
+        <a href="tel:0866-95-2100" class="header__cta-tel"><i class="fas fa-phone-alt"></i> 0866-95-2100</a>
+        <a href="inquiry.html" class="header__cta-contact"><i class="fas fa-envelope"></i> お問合せ</a>
+      </div>
+      <button class="hamburger" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu__overlay" aria-hidden="true"></div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="モバイルナビゲーション">
+    <ul class="mobile-menu__list">
+      <li><a href="about.html" class="mobile-menu__link">レビューについて</a></li>
+      <li><a href="course.html" class="mobile-menu__link">コース案内</a></li>
+      <li><a href="program.html" class="mobile-menu__link">プログラミング</a></li>
+      <li><a href="charge.html" class="mobile-menu__link">料金</a></li>
+      <li><a href="access.html" class="mobile-menu__link">教室案内</a></li>
+      <li><a href="inquiry.html" class="mobile-menu__link">お問合せ</a></li>
+    </ul>
+    <div class="mobile-menu__cta">
+      <a href="tel:0866952100" class="mobile-menu__cta-btn mobile-menu__cta-btn--tel">
+        <i class="fas fa-phone-alt"></i>
+        0866-95-2100
+      </a>
+      <a href="inquiry.html" class="mobile-menu__cta-btn mobile-menu__cta-btn--contact">
+        <i class="fas fa-envelope"></i>
+        お問合せはこちら
+      </a>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero__title">教室案内</h1>
+      <p class="page-hero__subtitle">Access</p>
+    </div>
+  </section>
+
+  <!-- Access Info + Map -->
+  <section class="section">
+    <div class="container">
+      <div class="access-layout">
+        <!-- Info -->
+        <div class="info-card js-fade-in">
+          <h2 class="info-card__title">個別指導レビュー 総社駅前校</h2>
+          <div class="info-card__row">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <p>〒719-1136 岡山県総社市駅前2-2-10<br>新世紀観光ビル2F</p>
+            </div>
+          </div>
+          <div class="info-card__row">
+            <i class="fas fa-phone-alt"></i>
+            <div>
+              <p>TEL: <a href="tel:0866-95-2100" style="color: var(--color-primary); font-weight: var(--font-weight-bold);">0866-95-2100</a></p>
+            </div>
+          </div>
+          <div class="info-card__row">
+            <i class="fas fa-clock"></i>
+            <div>
+              <table class="hours-table">
+                <tr>
+                  <td>平日</td>
+                  <td>14:00〜22:00</td>
+                </tr>
+                <tr>
+                  <td>土曜日</td>
+                  <td>13:30〜18:00（テスト前は19:10まで）</td>
+                </tr>
+                <tr>
+                  <td>日曜日</td>
+                  <td>定休日</td>
+                </tr>
+              </table>
+              <span class="info-card__badge"><i class="fas fa-info-circle"></i> テスト直前は無料勉強会あり</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map -->
+        <div>
+          <div class="access-map js-fade-in">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.8!2d133.6933!3d34.6717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3554025f4e6e4e4f%3A0x0!2z5bKh5bGx55yM57eP56S-5biC6aeF5YmNMi0yLTEw!5e0!3m2!1sja!2sjp!4v1700000000000!5m2!1sja!2sjp" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="個別指導レビュー 総社駅前校"></iframe>
+          </div>
+          <div class="access-direction">
+            <i class="fas fa-walking"></i>
+            <span>総社駅東口 徒歩4分</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schools -->
+  <section class="schools-section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-label">通塾学校</span>
+        <h2>
+          <span class="section-heading__ja">通塾学校</span>
+          <span class="section-heading__en">Partner Schools</span>
+        </h2>
+      </div>
+      <div class="schools-grid">
+        <div class="school-card js-fade-in">
+          <div class="school-card__header">
+            <div class="school-card__icon school-card__icon--elementary"><i class="fas fa-child"></i></div>
+            <h3 class="school-card__title">小学校</h3>
+          </div>
+          <p class="school-card__list">総社中央・総社北・総社・常盤・山手・清音・神在・川辺</p>
+        </div>
+        <div class="school-card js-fade-in">
+          <div class="school-card__header">
+            <div class="school-card__icon school-card__icon--junior"><i class="fas fa-graduation-cap"></i></div>
+            <h3 class="school-card__title">中学校</h3>
+          </div>
+          <p class="school-card__list">五つ星・総社・総社西・総社東・真備東・高松・足守・大安寺・倉敷北・倉敷南・就実・金光</p>
+        </div>
+        <div class="school-card js-fade-in">
+          <div class="school-card__header">
+            <div class="school-card__icon school-card__icon--senior"><i class="fas fa-university"></i></div>
+            <h3 class="school-card__title">高校</h3>
+          </div>
+          <p class="school-card__list">総社・総社南・高梁・倉敷青陵・倉敷南・倉敷商業・倉敷中央・倉敷工業・高松農業・倉敷・金光学園・清心女子・明誠学園・就実</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Band -->
+  <section class="cta-band">
+    <div class="container">
+      <p class="cta-band__text">まずはお気軽にお問合せください</p>
+      <div class="cta-band__buttons">
+        <a href="tel:0866-95-2100" class="cta-band__btn cta-band__btn--tel"><i class="fas fa-phone-alt"></i> 0866-95-2100</a>
+        <a href="inquiry.html" class="cta-band__btn cta-band__btn--contact"><i class="fas fa-envelope"></i> お問合せはこちら</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__inner container">
+      <div class="footer__info">
+        <div class="footer__logo">
+          <span class="footer__logo-main">個別指導レビュー</span>
+          <span class="footer__logo-sub">学校成績保証の個別指導塾</span>
+        </div>
+        <p class="footer__address">〒719-1136 岡山県総社市駅前2-2-10 新世紀観光ビル2F</p>
+        <p class="footer__tel">TEL: <a href="tel:0866-95-2100">0866-95-2100</a></p>
+        <p class="footer__email">Email: <a href="mailto:review@kir.biglobe.ne.jp">review@kir.biglobe.ne.jp</a></p>
+        <p class="footer__hours">受付時間: 14:00〜21:00</p>
+      </div>
+      <nav class="footer__nav">
+        <ul>
+          <li><a href="index.html">トップ</a></li>
+          <li><a href="about.html">レビューについて</a></li>
+          <li><a href="course.html">コース案内</a></li>
+          <li><a href="program.html">プログラミング</a></li>
+          <li><a href="charge.html">料金案内</a></li>
+          <li><a href="access.html">教室案内</a></li>
+          <li><a href="inquiry.html">お問合せ</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer__copy">
+      <p>&copy; 2012 個別指導レビュー All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

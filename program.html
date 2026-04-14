@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プログラミングコース | 個別指導レビュー</title>
+  <meta name="description" content="総社市に開校！小・中学生対象の本格マイクラプログラミング教室。ビジュアルプログラミングからJavaScriptまで学べます。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Page Hero - Programming */
+    .page-hero--programming {
+      margin-top: var(--header-height);
+      background: linear-gradient(135deg, var(--color-programming) 0%, #1a4da8 100%);
+      padding: 60px 0;
+      text-align: center;
+      color: var(--color-text-inverse);
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero--programming::before {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 400px;
+      height: 400px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+    }
+    .page-hero--programming .page-hero__title {
+      font-size: 1.75rem;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text-inverse);
+      margin-bottom: 4px;
+    }
+    .page-hero--programming .page-hero__subtitle {
+      font-size: 0.875rem;
+      font-weight: var(--font-weight-bold);
+      color: rgba(255,255,255,0.8);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* Main Section */
+    .program-main {
+      padding: 80px 0;
+    }
+    .program-main__catch {
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-programming);
+      line-height: 1.6;
+      margin-bottom: 40px;
+    }
+    .program-main__video {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .program-main__video-embed {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      border-radius: var(--border-radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+    }
+    .program-main__video-embed iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Trial Section */
+    .trial-section {
+      background: linear-gradient(135deg, var(--color-programming) 0%, #1a4da8 100%);
+      padding: 60px 0;
+      text-align: center;
+      color: var(--color-text-inverse);
+    }
+    .trial-section__title {
+      font-size: 1.375rem;
+      font-weight: var(--font-weight-bold);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+    .trial-section__contacts {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .trial-section__contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.125rem;
+    }
+    .trial-section__contact-item a {
+      color: var(--color-text-inverse);
+      font-weight: var(--font-weight-bold);
+    }
+
+    /* Why Programming */
+    .why-programming {
+      padding: 80px 0;
+      background-color: var(--color-bg-warm);
+    }
+    .why-programming__list {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .why-programming__item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      background: var(--color-bg-base);
+      padding: 24px;
+      border-radius: var(--border-radius-md);
+      box-shadow: var(--shadow-card);
+    }
+    .why-programming__item-icon {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      background-color: var(--color-programming);
+      color: var(--color-text-inverse);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+    }
+    .why-programming__item-text {
+      font-size: 0.9375rem;
+      line-height: 1.8;
+      color: var(--color-text-secondary);
+    }
+
+    /* Points Grid */
+    .points-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .point-card {
+      background: var(--color-bg-base);
+      border-radius: var(--border-radius-md);
+      padding: 32px 24px;
+      box-shadow: var(--shadow-card);
+      text-align: center;
+      border-top: 4px solid var(--color-programming);
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+    .point-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+    .point-card__number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: var(--color-programming);
+      color: var(--color-text-inverse);
+      font-size: 1rem;
+      font-weight: var(--font-weight-bold);
+      border-radius: 50%;
+      margin-bottom: 16px;
+    }
+    .point-card__title {
+      font-size: 1.0625rem;
+      font-weight: var(--font-weight-bold);
+      margin-bottom: 12px;
+      color: var(--color-text-primary);
+      line-height: 1.4;
+    }
+    .point-card__text {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+
+    /* Pricing */
+    .program-pricing {
+      padding: 80px 0;
+      background-color: var(--color-bg-warm);
+    }
+    .pricing-table {
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--color-bg-base);
+      border-radius: var(--border-radius-md);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+    }
+    .pricing-table__header {
+      background-color: var(--color-programming);
+      color: var(--color-text-inverse);
+      padding: 20px;
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: var(--font-weight-bold);
+    }
+    .pricing-table__body {
+      padding: 28px;
+    }
+    .pricing-table__row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+      border-bottom: 1px solid #eee;
+      font-size: 0.9375rem;
+    }
+    .pricing-table__row:last-child {
+      border-bottom: none;
+    }
+    .pricing-table__label {
+      color: var(--color-text-secondary);
+    }
+    .pricing-table__value {
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text-primary);
+      font-size: 1.0625rem;
+    }
+    .pricing-table__note {
+      margin-top: 12px;
+      font-size: 0.8125rem;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+
+    /* Campaign */
+    .program-campaign {
+      padding: 60px 0;
+      text-align: center;
+    }
+    .campaign-box {
+      max-width: 600px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, #fff4e4, #fff);
+      border: 3px solid var(--color-primary);
+      border-radius: var(--border-radius-md);
+      padding: 40px 28px;
+    }
+    .campaign-box__badge {
+      display: inline-block;
+      background-color: var(--color-primary);
+      color: var(--color-text-inverse);
+      padding: 6px 20px;
+      border-radius: var(--border-radius-pill);
+      font-size: 0.875rem;
+      font-weight: var(--font-weight-bold);
+      margin-bottom: 20px;
+    }
+    .campaign-box__title {
+      font-size: 1.25rem;
+      font-weight: var(--font-weight-bold);
+      margin-bottom: 20px;
+      color: var(--color-text-primary);
+    }
+    .campaign-box__item {
+      font-size: 1.125rem;
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+    .campaign-box__item strong {
+      color: var(--color-primary);
+      font-size: 1.5rem;
+    }
+    .campaign-box__note {
+      font-size: 0.8125rem;
+      color: var(--color-text-secondary);
+      margin-top: 12px;
+    }
+
+    /* Footer */
+    .footer__logo { margin-bottom: 12px; }
+    .footer__logo-main { display: block; font-size: 1.25rem; font-weight: var(--font-weight-bold); color: var(--color-primary-light); }
+    .footer__logo-sub { display: block; font-size: 0.6875rem; opacity: 0.7; }
+    .footer__address, .footer__tel, .footer__email, .footer__hours { font-size: 0.8125rem; line-height: 1.8; opacity: 0.8; }
+    .footer__tel a, .footer__email a { color: var(--color-primary-light); }
+    .footer__nav ul { display: flex; flex-direction: column; gap: 10px; }
+    .footer__nav a { font-size: 0.8125rem; opacity: 0.8; transition: opacity var(--transition-base); }
+    .footer__nav a:hover { opacity: 1; color: var(--color-primary-light); }
+    .footer__copy { border-top: 1px solid rgba(255,255,255,0.1); padding: 20px 0; text-align: center; }
+    .footer__copy p { font-size: 0.75rem; opacity: 0.6; }
+
+    @media (min-width: 768px) {
+      .page-hero--programming .page-hero__title { font-size: 2rem; }
+      .program-main__catch { font-size: 1.5rem; }
+      .points-grid { grid-template-columns: repeat(2, 1fr); }
+      .trial-section__contacts { flex-direction: row; justify-content: center; gap: 32px; }
+      .footer__inner { grid-template-columns: 1.5fr 1fr; }
+    }
+    @media (min-width: 1024px) {
+      .page-hero--programming { padding: 80px 0; }
+      .page-hero--programming .page-hero__title { font-size: 2.25rem; }
+      .program-main, .program-pricing { padding: 100px 0; }
+      .why-programming { padding: 100px 0; }
+      .points-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header__inner container">
+      <div class="header__logo">
+        <a href="index.html">
+          <span class="header__logo-main">個別指導レビュー</span>
+          <span class="header__logo-sub">学校成績保証の個別指導塾</span>
+        </a>
+      </div>
+      <nav class="header__nav" id="nav">
+        <ul class="header__nav-list">
+          <li><a href="about.html" class="header__nav-link">レビューについて</a></li>
+          <li><a href="course.html" class="header__nav-link">コース案内</a></li>
+          <li><a href="program.html" class="header__nav-link">プログラミング</a></li>
+          <li><a href="charge.html" class="header__nav-link">料金案内</a></li>
+          <li><a href="access.html" class="header__nav-link">教室案内</a></li>
+          <li><a href="inquiry.html" class="header__nav-link">お問合せ</a></li>
+        </ul>
+      </nav>
+      <div class="header__cta">
+        <a href="tel:0866-95-2100" class="header__cta-tel"><i class="fas fa-phone-alt"></i> 0866-95-2100</a>
+        <a href="inquiry.html" class="header__cta-contact"><i class="fas fa-envelope"></i> お問合せ</a>
+      </div>
+      <button class="hamburger" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu__overlay" aria-hidden="true"></div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="モバイルナビゲーション">
+    <ul class="mobile-menu__list">
+      <li><a href="about.html" class="mobile-menu__link">レビューについて</a></li>
+      <li><a href="course.html" class="mobile-menu__link">コース案内</a></li>
+      <li><a href="program.html" class="mobile-menu__link">プログラミング</a></li>
+      <li><a href="charge.html" class="mobile-menu__link">料金</a></li>
+      <li><a href="access.html" class="mobile-menu__link">教室案内</a></li>
+      <li><a href="inquiry.html" class="mobile-menu__link">お問合せ</a></li>
+    </ul>
+    <div class="mobile-menu__cta">
+      <a href="tel:0866952100" class="mobile-menu__cta-btn mobile-menu__cta-btn--tel">
+        <i class="fas fa-phone-alt"></i>
+        0866-95-2100
+      </a>
+      <a href="inquiry.html" class="mobile-menu__cta-btn mobile-menu__cta-btn--contact">
+        <i class="fas fa-envelope"></i>
+        お問合せはこちら
+      </a>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero--programming">
+    <div class="container">
+      <h1 class="page-hero__title">プログラミングコース</h1>
+      <p class="page-hero__subtitle">Programming</p>
+    </div>
+  </section>
+
+  <!-- Main -->
+  <section class="program-main">
+    <div class="container">
+      <p class="program-main__catch">総社市に2024年開校！<br>小・中学生対象 x 本格マイクラプログラミング教室 誕生！</p>
+      <div class="program-main__video">
+        <div class="program-main__video-embed">
+          <iframe src="https://www.youtube.com/embed/6hgY8amWDdQ" title="プログラミングコース紹介動画" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trial -->
+  <section class="trial-section">
+    <div class="container">
+      <h2 class="trial-section__title">無料体験会随時申込み受付中！（1回70分）</h2>
+      <div class="trial-section__contacts">
+        <div class="trial-section__contact-item">
+          <i class="fas fa-phone-alt"></i>
+          <a href="tel:0866-95-2100">0866-95-2100</a>
+        </div>
+        <div class="trial-section__contact-item">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:review@kir.biglobe.ne.jp">review@kir.biglobe.ne.jp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Programming -->
+  <section class="why-programming">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-label">学ぶ理由</span>
+        <h2>
+          <span class="section-heading__ja">なぜプログラミングを学ぶの？</span>
+          <span class="section-heading__en">Why Programming?</span>
+        </h2>
+      </div>
+      <div class="why-programming__list">
+        <div class="why-programming__item js-fade-in">
+          <div class="why-programming__item-icon"><i class="fas fa-book-open"></i></div>
+          <p class="why-programming__item-text">2020年度より小学校教科書にプログラミングが追加されました。これからの時代を生きる子どもたちにとって、プログラミング的思考は必須のスキルです。</p>
+        </div>
+        <div class="why-programming__item js-fade-in">
+          <div class="why-programming__item-icon"><i class="fas fa-chart-line"></i></div>
+          <p class="why-programming__item-text">習わせたい習い事ランキングにプログラミングが急上昇。論理的思考力・問題解決力・創造力を養えると注目されています。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recommend Points -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-label">おすすめ</span>
+        <h2>
+          <span class="section-heading__ja">おすすめポイント</span>
+          <span class="section-heading__en">Recommend Points</span>
+        </h2>
+      </div>
+      <div class="points-grid">
+        <div class="point-card js-fade-in">
+          <span class="point-card__number">1</span>
+          <h3 class="point-card__title">エージェントを駆使し様々な課題をクリア</h3>
+          <p class="point-card__text">マイクラの「エージェント」をプログラムで動かしミッションクリア。楽しみながら学べます。</p>
+        </div>
+        <div class="point-card js-fade-in">
+          <span class="point-card__number">2</span>
+          <h3 class="point-card__title">ビジュアルプログラミングで思考構築</h3>
+          <p class="point-card__text">問題の細分化、順次思考、最短ルートでの目標達成。論理的思考力を育てます。</p>
+        </div>
+        <div class="point-card js-fade-in">
+          <span class="point-card__number">3</span>
+          <h3 class="point-card__title">コーディング！言語学習</h3>
+          <p class="point-card__text">JavaScriptでコードを学習。実際のプログラミング言語を使った本格的な学びです。</p>
+        </div>
+        <div class="point-card js-fade-in">
+          <span class="point-card__number">4</span>
+          <h3 class="point-card__title">壮大なワールド！続きが気になるストーリー</h3>
+          <p class="point-card__text">ワクワクするストーリーが、子どもたちの学習意欲を自然に引き出します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="program-pricing">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-label">授業料</span>
+        <h2>
+          <span class="section-heading__ja">授業料</span>
+          <span class="section-heading__en">Tuition</span>
+        </h2>
+      </div>
+      <div class="pricing-table">
+        <div class="pricing-table__header">プログラミングコース 授業料</div>
+        <div class="pricing-table__body">
+          <div class="pricing-table__row">
+            <span class="pricing-table__label">入会金</span>
+            <span class="pricing-table__value">11,000円（税込）</span>
+          </div>
+          <div class="pricing-table__row">
+            <span class="pricing-table__label">授業料</span>
+            <span class="pricing-table__value">9,900円/月（税込）</span>
+          </div>
+          <div class="pricing-table__row">
+            <span class="pricing-table__label">設備費</span>
+            <span class="pricing-table__value">2,200円/月</span>
+          </div>
+          <div class="pricing-table__row">
+            <span class="pricing-table__label">授業回数</span>
+            <span class="pricing-table__value">週1回50分 / 毎月3.5回以上</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Campaign -->
+  <section class="program-campaign">
+    <div class="container">
+      <div class="campaign-box">
+        <span class="campaign-box__badge"><i class="fas fa-gift"></i> 早期入会キャンペーン</span>
+        <h3 class="campaign-box__title">今なら特別価格でスタート！</h3>
+        <p class="campaign-box__item">入会金 <strong>0円</strong></p>
+        <p class="campaign-box__item">授業料 <strong>1,100円引き</strong></p>
+        <p class="campaign-box__note">※2026年8月まで</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Band -->
+  <section class="cta-band">
+    <div class="container">
+      <p class="cta-band__text">まずはお気軽にお問合せください</p>
+      <div class="cta-band__buttons">
+        <a href="tel:0866-95-2100" class="cta-band__btn cta-band__btn--tel"><i class="fas fa-phone-alt"></i> 0866-95-2100</a>
+        <a href="inquiry.html" class="cta-band__btn cta-band__btn--contact"><i class="fas fa-envelope"></i> お問合せはこちら</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__inner container">
+      <div class="footer__info">
+        <div class="footer__logo">
+          <span class="footer__logo-main">個別指導レビュー</span>
+          <span class="footer__logo-sub">学校成績保証の個別指導塾</span>
+        </div>
+        <p class="footer__address">〒719-1136 岡山県総社市駅前2-2-10 新世紀観光ビル2F</p>
+        <p class="footer__tel">TEL: <a href="tel:0866-95-2100">0866-95-2100</a></p>
+        <p class="footer__email">Email: <a href="mailto:review@kir.biglobe.ne.jp">review@kir.biglobe.ne.jp</a></p>
+        <p class="footer__hours">受付時間: 14:00〜21:00</p>
+      </div>
+      <nav class="footer__nav">
+        <ul>
+          <li><a href="index.html">トップ</a></li>
+          <li><a href="about.html">レビューについて</a></li>
+          <li><a href="course.html">コース案内</a></li>
+          <li><a href="program.html">プログラミング</a></li>
+          <li><a href="charge.html">料金案内</a></li>
+          <li><a href="access.html">教室案内</a></li>
+          <li><a href="inquiry.html">お問合せ</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer__copy">
+      <p>&copy; 2012 個別指導レビュー All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

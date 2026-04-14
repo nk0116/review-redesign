@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問合せ | 個別指導レビュー</title>
+  <meta name="description" content="個別指導レビューへのお問合せ。無料体験授業・入塾相談など、お気軽にご連絡ください。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Page Hero */
+    .page-hero {
+      margin-top: var(--header-height);
+      background-color: var(--color-bg-warm);
+      padding: 60px 0;
+      text-align: center;
+    }
+    .page-hero__title {
+      font-size: 1.75rem;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text-primary);
+      margin-bottom: 4px;
+    }
+    .page-hero__subtitle {
+      font-size: 0.875rem;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-primary);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* Contact Layout */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Form */
+    .contact-form {
+      background: var(--color-bg-base);
+      border-radius: var(--border-radius-md);
+      padding: 40px 28px;
+      box-shadow: var(--shadow-card);
+    }
+    .contact-form__title {
+      font-size: 1.25rem;
+      font-weight: var(--font-weight-bold);
+      margin-bottom: 28px;
+      color: var(--color-text-primary);
+      text-align: center;
+    }
+    .form-group {
+      margin-bottom: 24px;
+    }
+    .form-group__label {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: var(--font-weight-bold);
+      margin-bottom: 8px;
+      color: var(--color-text-primary);
+    }
+    .form-group__required {
+      display: inline-block;
+      background-color: var(--color-primary);
+      color: var(--color-text-inverse);
+      font-size: 0.6875rem;
+      font-weight: var(--font-weight-bold);
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+    .form-group__optional {
+      display: inline-block;
+      background-color: #ccc;
+      color: var(--color-text-inverse);
+      font-size: 0.6875rem;
+      font-weight: var(--font-weight-bold);
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="tel"],
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid #ddd;
+      border-radius: var(--border-radius-sm);
+      font-family: var(--font-family-base);
+      font-size: 1rem;
+      color: var(--color-text-primary);
+      background-color: #fafafa;
+      transition: border-color var(--transition-base), box-shadow var(--transition-base);
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px rgba(228, 87, 16, 0.15);
+      background-color: var(--color-bg-base);
+    }
+    .form-group textarea {
+      min-height: 160px;
+      resize: vertical;
+    }
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23666' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 40px;
+    }
+    .form-submit {
+      text-align: center;
+      margin-top: 32px;
+    }
+    .form-submit__btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+      color: var(--color-text-inverse);
+      font-size: 1.125rem;
+      font-weight: var(--font-weight-bold);
+      padding: 18px 60px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+      box-shadow: 0 4px 15px rgba(228, 87, 16, 0.3);
+    }
+    .form-submit__btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(228, 87, 16, 0.4);
+    }
+
+    /* Phone Contact */
+    .phone-contact {
+      background: var(--color-bg-base);
+      border-radius: var(--border-radius-md);
+      padding: 40px 28px;
+      box-shadow: var(--shadow-card);
+      text-align: center;
+    }
+    .phone-contact__icon {
+      width: 72px;
+      height: 72px;
+      background-color: var(--color-bg-warm);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 1.75rem;
+      color: var(--color-primary);
+    }
+    .phone-contact__title {
+      font-size: 1.125rem;
+      font-weight: var(--font-weight-bold);
+      margin-bottom: 16px;
+      color: var(--color-text-primary);
+    }
+    .phone-contact__number {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.75rem;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-primary);
+      margin-bottom: 12px;
+    }
+    .phone-contact__number a {
+      color: var(--color-primary);
+    }
+    .phone-contact__hours {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+    }
+
+    /* Footer */
+    .footer__logo { margin-bottom: 12px; }
+    .footer__logo-main { display: block; font-size: 1.25rem; font-weight: var(--font-weight-bold); color: var(--color-primary-light); }
+    .footer__logo-sub { display: block; font-size: 0.6875rem; opacity: 0.7; }
+    .footer__address, .footer__tel, .footer__email, .footer__hours { font-size: 0.8125rem; line-height: 1.8; opacity: 0.8; }
+    .footer__tel a, .footer__email a { color: var(--color-primary-light); }
+    .footer__nav ul { display: flex; flex-direction: column; gap: 10px; }
+    .footer__nav a { font-size: 0.8125rem; opacity: 0.8; transition: opacity var(--transition-base); }
+    .footer__nav a:hover { opacity: 1; color: var(--color-primary-light); }
+    .footer__copy { border-top: 1px solid rgba(255,255,255,0.1); padding: 20px 0; text-align: center; }
+    .footer__copy p { font-size: 0.75rem; opacity: 0.6; }
+
+    @media (min-width: 768px) {
+      .page-hero__title { font-size: 2rem; }
+      .contact-layout { grid-template-columns: 2fr 1fr; align-items: start; }
+      .contact-form { padding: 48px 36px; }
+      .footer__inner { grid-template-columns: 1.5fr 1fr; }
+    }
+    @media (min-width: 1024px) {
+      .page-hero { padding: 80px 0; }
+      .page-hero__title { font-size: 2.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header__inner container">
+      <div class="header__logo">
+        <a href="index.html">
+          <span class="header__logo-main">個別指導レビュー</span>
+          <span class="header__logo-sub">学校成績保証の個別指導塾</span>
+        </a>
+      </div>
+      <nav class="header__nav" id="nav">
+        <ul class="header__nav-list">
+          <li><a href="about.html" class="header__nav-link">レビューについて</a></li>
+          <li><a href="course.html" class="header__nav-link">コース案内</a></li>
+          <li><a href="program.html" class="header__nav-link">プログラミング</a></li>
+          <li><a href="charge.html" class="header__nav-link">料金案内</a></li>
+          <li><a href="access.html" class="header__nav-link">教室案内</a></li>
+          <li><a href="inquiry.html" class="header__nav-link">お問合せ</a></li>
+        </ul>
+      </nav>
+      <div class="header__cta">
+        <a href="tel:0866-95-2100" class="header__cta-tel"><i class="fas fa-phone-alt"></i> 0866-95-2100</a>
+        <a href="inquiry.html" class="header__cta-contact"><i class="fas fa-envelope"></i> お問合せ</a>
+      </div>
+      <button class="hamburger" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu__overlay" aria-hidden="true"></div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="モバイルナビゲーション">
+    <ul class="mobile-menu__list">
+      <li><a href="about.html" class="mobile-menu__link">レビューについて</a></li>
+      <li><a href="course.html" class="mobile-menu__link">コース案内</a></li>
+      <li><a href="program.html" class="mobile-menu__link">プログラミング</a></li>
+      <li><a href="charge.html" class="mobile-menu__link">料金</a></li>
+      <li><a href="access.html" class="mobile-menu__link">教室案内</a></li>
+      <li><a href="inquiry.html" class="mobile-menu__link">お問合せ</a></li>
+    </ul>
+    <div class="mobile-menu__cta">
+      <a href="tel:0866952100" class="mobile-menu__cta-btn mobile-menu__cta-btn--tel">
+        <i class="fas fa-phone-alt"></i>
+        0866-95-2100
+      </a>
+      <a href="inquiry.html" class="mobile-menu__cta-btn mobile-menu__cta-btn--contact">
+        <i class="fas fa-envelope"></i>
+        お問合せはこちら
+      </a>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero__title">お問合せ</h1>
+      <p class="page-hero__subtitle">Contact</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-layout">
+        <!-- Form -->
+        <div class="contact-form js-fade-in">
+          <h2 class="contact-form__title">お問合せフォーム</h2>
+          <form action="#" method="post">
+            <div class="form-group">
+              <label class="form-group__label" for="name">
+                お名前
+                <span class="form-group__required">必須</span>
+              </label>
+              <input type="text" id="name" name="name" placeholder="山田 太郎" required>
+            </div>
+            <div class="form-group">
+              <label class="form-group__label" for="furigana">
+                フリガナ
+                <span class="form-group__optional">任意</span>
+              </label>
+              <input type="text" id="furigana" name="furigana" placeholder="ヤマダ タロウ">
+            </div>
+            <div class="form-group">
+              <label class="form-group__label" for="email">
+                メールアドレス
+                <span class="form-group__required">必須</span>
+              </label>
+              <input type="email" id="email" name="email" placeholder="example@email.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-group__label" for="tel">
+                電話番号
+                <span class="form-group__optional">任意</span>
+              </label>
+              <input type="tel" id="tel" name="tel" placeholder="090-1234-5678">
+            </div>
+            <div class="form-group">
+              <label class="form-group__label" for="grade">
+                お子様の学年
+                <span class="form-group__optional">任意</span>
+              </label>
+              <select id="grade" name="grade">
+                <option value="">選択してください</option>
+                <option value="小1">小学1年生</option>
+                <option value="小2">小学2年生</option>
+                <option value="小3">小学3年生</option>
+                <option value="小4">小学4年生</option>
+                <option value="小5">小学5年生</option>
+                <option value="小6">小学6年生</option>
+                <option value="中1">中学1年生</option>
+                <option value="中2">中学2年生</option>
+                <option value="中3">中学3年生</option>
+                <option value="高1">高校1年生</option>
+                <option value="高2">高校2年生</option>
+                <option value="高3">高校3年生</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-group__label" for="message">
+                お問合せ内容
+                <span class="form-group__required">必須</span>
+              </label>
+              <textarea id="message" name="message" placeholder="お問合せ内容をご記入ください" required></textarea>
+            </div>
+            <div class="form-submit">
+              <button type="submit" class="form-submit__btn">
+                <i class="fas fa-paper-plane"></i> 送信する
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Phone -->
+        <div class="phone-contact js-fade-in">
+          <div class="phone-contact__icon"><i class="fas fa-phone-alt"></i></div>
+          <h3 class="phone-contact__title">お電話でのお問合せ</h3>
+          <p class="phone-contact__number">
+            <a href="tel:0866-95-2100">0866-95-2100</a>
+          </p>
+          <p class="phone-contact__hours">受付時間: 14:00〜21:00</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__inner container">
+      <div class="footer__info">
+        <div class="footer__logo">
+          <span class="footer__logo-main">個別指導レビュー</span>
+          <span class="footer__logo-sub">学校成績保証の個別指導塾</span>
+        </div>
+        <p class="footer__address">〒719-1136 岡山県総社市駅前2-2-10 新世紀観光ビル2F</p>
+        <p class="footer__tel">TEL: <a href="tel:0866-95-2100">0866-95-2100</a></p>
+        <p class="footer__email">Email: <a href="mailto:review@kir.biglobe.ne.jp">review@kir.biglobe.ne.jp</a></p>
+        <p class="footer__hours">受付時間: 14:00〜21:00</p>
+      </div>
+      <nav class="footer__nav">
+        <ul>
+          <li><a href="index.html">トップ</a></li>
+          <li><a href="about.html">レビューについて</a></li>
+          <li><a href="course.html">コース案内</a></li>
+          <li><a href="program.html">プログラミング</a></li>
+          <li><a href="charge.html">料金案内</a></li>
+          <li><a href="access.html">教室案内</a></li>
+          <li><a href="inquiry.html">お問合せ</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer__copy">
+      <p>&copy; 2012 個別指導レビュー All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>料金案内 | 個別指導レビュー</title>
+  <meta name="description" content="個別指導レビューの料金案内。小学生から高校生まで、リーズナブルな授業料で質の高い個別指導を提供します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Page Hero */
+    .page-hero {
+      margin-top: var(--header-height);
+      background-color: var(--color-bg-warm);
+      padding: 60px 0;
+      text-align: center;
+    }
+    .page-hero__title {
+      font-size: 1.75rem;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text-primary);
+      margin-bottom: 4px;
+    }
+    .page-hero__subtitle {
+      font-size: 0.875rem;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-primary);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* Price Tables */
+    .price-table-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border-radius: var(--border-radius-sm);
+      box-shadow: var(--shadow-card);
+      margin-bottom: 32px;
+    }
+    .price-table {
+      width: 100%;
+      min-width: 400px;
+      border-collapse: collapse;
+      font-size: 0.9375rem;
+      background: var(--color-bg-base);
+    }
+    .price-table thead th {
+      background-color: var(--color-primary);
+      color: var(--color-text-inverse);
+      font-weight: var(--font-weight-bold);
+      padding: 14px 16px;
+      text-align: center;
+      white-space: nowrap;
+      font-size: 0.875rem;
+    }
+    .price-table tbody td {
+      padding: 14px 16px;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+      white-space: nowrap;
+    }
+    .price-table tbody tr:hover {
+      background-color: var(--color-bg-warm);
+    }
+    .price-table tbody td:first-child {
+      font-weight: var(--font-weight-bold);
+      text-align: left;
+      background-color: #fafafa;
+    }
+
+    /* Tuition Table - wider */
+    .tuition-table {
+      min-width: 800px;
+    }
+    .tuition-table thead th {
+      font-size: 0.8125rem;
+      padding: 12px 10px;
+    }
+    .tuition-table tbody td {
+      font-size: 0.875rem;
+      padding: 12px 10px;
+    }
+
+    /* Notes */
+    .price-notes {
+      margin-top: 24px;
+      padding: 24px;
+      background: var(--color-bg-warm);
+      border-radius: var(--border-radius-sm);
+    }
+    .price-notes__title {
+      font-size: 0.9375rem;
+      font-weight: var(--font-weight-bold);
+      margin-bottom: 12px;
+      color: var(--color-text-primary);
+    }
+    .price-notes ul {
+      list-style: none;
+    }
+    .price-notes li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 8px;
+      font-size: 0.8125rem;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+    .price-notes li::before {
+      content: "※";
+      position: absolute;
+      left: 0;
+      color: var(--color-primary);
+    }
+
+    /* Sibling Discount */
+    .sibling-discount {
+      background: var(--color-bg-base);
+      border: 2px solid var(--color-course-junior);
+      border-radius: var(--border-radius-md);
+      padding: 32px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .sibling-discount__icon {
+      font-size: 2.5rem;
+      color: var(--color-course-junior);
+      margin-bottom: 12px;
+    }
+    .sibling-discount__title {
+      font-size: 1.25rem;
+      font-weight: var(--font-weight-bold);
+      margin-bottom: 8px;
+      color: var(--color-text-primary);
+    }
+    .sibling-discount__text {
+      font-size: 1rem;
+      color: var(--color-text-secondary);
+    }
+    .sibling-discount__highlight {
+      color: var(--color-course-junior);
+      font-size: 1.75rem;
+      font-weight: var(--font-weight-bold);
+    }
+
+    /* Campaign Section */
+    .charge-campaign {
+      padding: 60px 0;
+      text-align: center;
+    }
+    .charge-campaign__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .charge-campaign__card {
+      background: var(--color-bg-base);
+      border-radius: var(--border-radius-md);
+      padding: 32px 24px;
+      box-shadow: var(--shadow-card);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .charge-campaign__card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+    }
+    .charge-campaign__card-icon {
+      font-size: 2rem;
+      color: var(--color-primary);
+      margin-bottom: 12px;
+    }
+    .charge-campaign__card-title {
+      font-size: 1rem;
+      font-weight: var(--font-weight-bold);
+      margin-bottom: 8px;
+    }
+    .charge-campaign__card-value {
+      color: var(--color-primary);
+      font-size: 1.75rem;
+      font-weight: var(--font-weight-bold);
+    }
+
+    /* Option */
+    .option-info {
+      background: var(--color-bg-base);
+      border-radius: var(--border-radius-sm);
+      padding: 20px 24px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .option-info__icon {
+      color: var(--color-primary);
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    .option-info__text {
+      font-size: 0.9375rem;
+      color: var(--color-text-secondary);
+    }
+    .option-info__text strong {
+      color: var(--color-text-primary);
+    }
+
+    /* Footer */
+    .footer__logo { margin-bottom: 12px; }
+    .footer__logo-main { display: block; font-size: 1.25rem; font-weight: var(--font-weight-bold); color: var(--color-primary-light); }
+    .footer__logo-sub { display: block; font-size: 0.6875rem; opacity: 0.7; }
+    .footer__address, .footer__tel, .footer__email, .footer__hours { font-size: 0.8125rem; line-height: 1.8; opacity: 0.8; }
+    .footer__tel a, .footer__email a { color: var(--color-primary-light); }
+    .footer__nav ul { display: flex; flex-direction: column; gap: 10px; }
+    .footer__nav a { font-size: 0.8125rem; opacity: 0.8; transition: opacity var(--transition-base); }
+    .footer__nav a:hover { opacity: 1; color: var(--color-primary-light); }
+    .footer__copy { border-top: 1px solid rgba(255,255,255,0.1); padding: 20px 0; text-align: center; }
+    .footer__copy p { font-size: 0.75rem; opacity: 0.6; }
+
+    @media (min-width: 768px) {
+      .page-hero__title { font-size: 2rem; }
+      .charge-campaign__grid { grid-template-columns: repeat(3, 1fr); }
+      .footer__inner { grid-template-columns: 1.5fr 1fr; }
+    }
+    @media (min-width: 1024px) {
+      .page-hero { padding: 80px 0; }
+      .page-hero__title { font-size: 2.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header__inner container">
+      <div class="header__logo">
+        <a href="index.html">
+          <span class="header__logo-main">個別指導レビュー</span>
+          <span class="header__logo-sub">学校成績保証の個別指導塾</span>
+        </a>
+      </div>
+      <nav class="header__nav" id="nav">
+        <ul class="header__nav-list">
+          <li><a href="about.html" class="header__nav-link">レビューについて</a></li>
+          <li><a href="course.html" class="header__nav-link">コース案内</a></li>
+          <li><a href="program.html" class="header__nav-link">プログラミング</a></li>
+          <li><a href="charge.html" class="header__nav-link">料金案内</a></li>
+          <li><a href="access.html" class="header__nav-link">教室案内</a></li>
+          <li><a href="inquiry.html" class="header__nav-link">お問合せ</a></li>
+        </ul>
+      </nav>
+      <div class="header__cta">
+        <a href="tel:0866-95-2100" class="header__cta-tel"><i class="fas fa-phone-alt"></i> 0866-95-2100</a>
+        <a href="inquiry.html" class="header__cta-contact"><i class="fas fa-envelope"></i> お問合せ</a>
+      </div>
+      <button class="hamburger" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu__overlay" aria-hidden="true"></div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="モバイルナビゲーション">
+    <ul class="mobile-menu__list">
+      <li><a href="about.html" class="mobile-menu__link">レビューについて</a></li>
+      <li><a href="course.html" class="mobile-menu__link">コース案内</a></li>
+      <li><a href="program.html" class="mobile-menu__link">プログラミング</a></li>
+      <li><a href="charge.html" class="mobile-menu__link">料金</a></li>
+      <li><a href="access.html" class="mobile-menu__link">教室案内</a></li>
+      <li><a href="inquiry.html" class="mobile-menu__link">お問合せ</a></li>
+    </ul>
+    <div class="mobile-menu__cta">
+      <a href="tel:0866952100" class="mobile-menu__cta-btn mobile-menu__cta-btn--tel">
+        <i class="fas fa-phone-alt"></i>
+        0866-95-2100
+      </a>
+      <a href="inquiry.html" class="mobile-menu__cta-btn mobile-menu__cta-btn--contact">
+        <i class="fas fa-envelope"></i>
+        お問合せはこちら
+      </a>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero__title">料金案内</h1>
+      <p class="page-hero__subtitle">Price</p>
+    </div>
+  </section>
+
+  <!-- Enrollment Fee -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-label">入会金</span>
+        <h2>
+          <span class="section-heading__ja">入会金</span>
+          <span class="section-heading__en">Enrollment Fee</span>
+        </h2>
+      </div>
+      <div class="price-table-wrapper">
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th>通常入会金</th>
+              <th>兄弟姉妹入会金</th>
+              <th>紹介入会</th>
+              <th>講習会・テスト対策</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>16,500円</td>
+              <td>0円</td>
+              <td>0円</td>
+              <td>5,500円</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Monthly Tuition -->
+  <section class="section section--warm">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-label">月額授業料</span>
+        <h2>
+          <span class="section-heading__ja">月額授業料（税込）</span>
+          <span class="section-heading__en">Monthly Tuition</span>
+        </h2>
+      </div>
+      <p style="text-align: center; font-size: 0.875rem; color: var(--color-text-secondary); margin-bottom: 24px;">先生1:生徒2の個別指導</p>
+      <div class="price-table-wrapper">
+        <table class="price-table tuition-table">
+          <thead>
+            <tr>
+              <th>週回数</th>
+              <th>満点コース</th>
+              <th>小学1〜6</th>
+              <th>中学受験</th>
+              <th>中1・2</th>
+              <th>中3</th>
+              <th>高1・2</th>
+              <th>高3</th>
+              <th>映像個別</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>週1回</td>
+              <td>4,950円</td>
+              <td>7,150円</td>
+              <td>9,900円</td>
+              <td>8,800円</td>
+              <td>9,900円</td>
+              <td>11,000円</td>
+              <td>12,100円</td>
+              <td>12,650円</td>
+            </tr>
+            <tr>
+              <td>週2回</td>
+              <td>9,900円</td>
+              <td>14,300円</td>
+              <td>19,250円</td>
+              <td>17,050円</td>
+              <td>19,250円</td>
+              <td>21,450円</td>
+              <td>23,650円</td>
+              <td>25,300円</td>
+            </tr>
+            <tr>
+              <td>週3回</td>
+              <td>14,850円</td>
+              <td>21,450円</td>
+              <td>28,050円</td>
+              <td>24,750円</td>
+              <td>28,050円</td>
+              <td>31,350円</td>
+              <td>34,650円</td>
+              <td>37,950円</td>
+            </tr>
+            <tr>
+              <td>週4回</td>
+              <td>--</td>
+              <td>--</td>
+              <td>30,800円</td>
+              <td>27,500円</td>
+              <td>30,800円</td>
+              <td>40,150円</td>
+              <td>44,550円</td>
+              <td>50,600円</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Option -->
+      <div class="option-info">
+        <i class="fas fa-tv option-info__icon"></i>
+        <p class="option-info__text"><strong>映像オプション:</strong> 7,150円/教科</p>
+      </div>
+
+      <!-- Notes -->
+      <div class="price-notes">
+        <h3 class="price-notes__title">ご注意事項</h3>
+        <ul>
+          <li>小学生満点コースはマンスリー教材費約4,000円/月が必要です</li>
+          <li>高校生映像はPC・スマホ・タブレットで見放題</li>
+          <li>別途設備費3,300円/月がかかります</li>
+          <li>表示料金はすべて税込です</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sibling Discount -->
+  <section class="section">
+    <div class="container">
+      <div class="sibling-discount js-fade-in">
+        <div class="sibling-discount__icon"><i class="fas fa-people-group"></i></div>
+        <h3 class="sibling-discount__title">兄弟割引</h3>
+        <p class="sibling-discount__text">ご兄弟・姉妹での通塾は <span class="sibling-discount__highlight">10%OFF</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Campaign -->
+  <section class="section section--warm charge-campaign">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-label">キャンペーン</span>
+        <h2>
+          <span class="section-heading__ja">入会キャンペーン実施中！</span>
+          <span class="section-heading__en">Campaign</span>
+        </h2>
+      </div>
+      <div class="charge-campaign__grid">
+        <div class="charge-campaign__card js-fade-in">
+          <div class="charge-campaign__card-icon"><i class="fas fa-calendar-check"></i></div>
+          <p class="charge-campaign__card-title">最大</p>
+          <p class="charge-campaign__card-value">1ヶ月無料体験</p>
+        </div>
+        <div class="charge-campaign__card js-fade-in">
+          <div class="charge-campaign__card-icon"><i class="fas fa-gift"></i></div>
+          <p class="charge-campaign__card-title">先着20名</p>
+          <p class="charge-campaign__card-value">入会金100%OFF</p>
+        </div>
+        <div class="charge-campaign__card js-fade-in">
+          <div class="charge-campaign__card-icon"><i class="fas fa-percent"></i></div>
+          <p class="charge-campaign__card-title">さらに</p>
+          <p class="charge-campaign__card-value">初月授業料半額</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Band -->
+  <section class="cta-band">
+    <div class="container">
+      <p class="cta-band__text">まずはお気軽にお問合せください</p>
+      <div class="cta-band__buttons">
+        <a href="tel:0866-95-2100" class="cta-band__btn cta-band__btn--tel"><i class="fas fa-phone-alt"></i> 0866-95-2100</a>
+        <a href="inquiry.html" class="cta-band__btn cta-band__btn--contact"><i class="fas fa-envelope"></i> お問合せはこちら</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__inner container">
+      <div class="footer__info">
+        <div class="footer__logo">
+          <span class="footer__logo-main">個別指導レビュー</span>
+          <span class="footer__logo-sub">学校成績保証の個別指導塾</span>
+        </div>
+        <p class="footer__address">〒719-1136 岡山県総社市駅前2-2-10 新世紀観光ビル2F</p>
+        <p class="footer__tel">TEL: <a href="tel:0866-95-2100">0866-95-2100</a></p>
+        <p class="footer__email">Email: <a href="mailto:review@kir.biglobe.ne.jp">review@kir.biglobe.ne.jp</a></p>
+        <p class="footer__hours">受付時間: 14:00〜21:00</p>
+      </div>
+      <nav class="footer__nav">
+        <ul>
+          <li><a href="index.html">トップ</a></li>
+          <li><a href="about.html">レビューについて</a></li>
+          <li><a href="course.html">コース案内</a></li>
+          <li><a href="program.html">プログラミング</a></li>
+          <li><a href="charge.html">料金案内</a></li>
+          <li><a href="access.html">教室案内</a></li>
+          <li><a href="inquiry.html">お問合せ</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer__copy">
+      <p>&copy; 2012 個別指導レビュー All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
