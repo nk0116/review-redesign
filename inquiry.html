@@ -220,11 +220,7 @@
     <div class="header__inner container">
       <div class="header__logo">
         <a href="index.html" class="header__logo-link">
-          <picture>
-            <source media="(min-width: 768px)" srcset="images/header_logo.png">
-            <source media="(max-width: 767px)" srcset="images/header_logoSp.png">
-            <img src="images/header_logo.png" alt="個別指導レビュー コードアドベンチャー 総社駅前校" class="header__logo-img">
-          </picture>
+          <img src="images/header_logo.png" alt="個別指導レビュー コードアドベンチャー 総社駅前校" class="header__logo-img">
         </a>
       </div>
       <nav class="header__nav" id="nav">
@@ -287,7 +283,11 @@
         <!-- Form -->
         <div class="contact-form js-fade-in">
           <h2 class="contact-form__title">お問合せフォーム</h2>
-          <form action="#" method="post">
+          <form action="https://formsubmit.co/n0116kazuma@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="【個別指導レビュー】お問合せがありました">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://nk0116.github.io/review-redesign/inquiry.html?sent=true">
+            <input type="hidden" name="_template" value="table">
             <div class="form-group">
               <label class="form-group__label" for="name">
                 お名前
@@ -370,11 +370,7 @@
     <div class="footer__inner container">
       <div class="footer__info">
         <div class="footer__logo">
-          <picture>
-            <source media="(min-width: 768px)" srcset="images/header_logo.png">
-            <source media="(max-width: 767px)" srcset="images/header_logoSp.png">
-            <img src="images/header_logo.png" alt="個別指導レビュー コードアドベンチャー 総社駅前校" class="footer__logo-img">
-          </picture>
+          <img src="images/header_logo.png" alt="個別指導レビュー コードアドベンチャー 総社駅前校" class="footer__logo-img">
         </div>
         <p class="footer__address">〒719-1136 岡山県総社市駅前2-2-10 新世紀観光ビル2F</p>
         <p class="footer__tel">TEL: <a href="tel:0866-95-2100">0866-95-2100</a></p>
@@ -399,5 +395,16 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    if (window.location.search.includes('sent=true')) {
+      const form = document.querySelector('.contact-form');
+      if (form) {
+        const msg = document.createElement('div');
+        msg.style.cssText = 'background:#E45710;color:#fff;padding:20px;border-radius:8px;text-align:center;margin-bottom:24px;font-weight:700;';
+        msg.textContent = '送信完了しました。お問合せありがとうございます。';
+        form.insertBefore(msg, form.firstChild);
+      }
+    }
+  </script>
 </body>
 </html>
