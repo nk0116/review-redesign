@@ -217,7 +217,6 @@ button {
   width: auto;
   display: block;
   margin-bottom: 12px;
-  filter: brightness(0) invert(1);
 }
 
 @media (max-width: 767px) {
