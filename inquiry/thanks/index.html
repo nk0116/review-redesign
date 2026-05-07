@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問合せありがとうございました | 個別指導レビュー</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="description" content="お問合せを受付いたしました。担当者より2〜3営業日以内にご連絡いたします。">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    /* Page Hero */
+    .page-hero {
+      margin-top: var(--header-height);
+      background-color: var(--color-bg-warm);
+      padding: 60px 0;
+      text-align: center;
+    }
+    .page-hero__title {
+      font-size: 1.75rem;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text-primary);
+      margin-bottom: 4px;
+    }
+    .page-hero__subtitle {
+      font-size: 0.875rem;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-primary);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* Thanks Section */
+    .thanks-section {
+      padding: 60px 0 80px;
+    }
+    .thanks-card {
+      max-width: 720px;
+      margin: 0 auto;
+      background: var(--color-bg-base);
+      border-radius: var(--border-radius-md);
+      padding: 48px 28px;
+      box-shadow: var(--shadow-card);
+      text-align: center;
+    }
+    .thanks-card__icon-wrap {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      margin: 0 auto 24px;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(228, 87, 16, 0.3);
+    }
+    .thanks-card__icon {
+      color: var(--color-text-inverse);
+      font-size: 2.5rem;
+    }
+    .thanks-card__title {
+      font-size: 1.375rem;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text-primary);
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+    .thanks-card__lead {
+      font-size: 1rem;
+      color: var(--color-text-secondary);
+      line-height: 1.9;
+      margin-bottom: 28px;
+    }
+    .thanks-card__lead strong {
+      color: var(--color-primary);
+      font-weight: var(--font-weight-bold);
+    }
+    .thanks-card__notice {
+      background: var(--color-bg-warm);
+      border-radius: var(--border-radius-sm);
+      padding: 16px 20px;
+      margin-bottom: 32px;
+      font-size: 0.8125rem;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+    .thanks-card__notice i {
+      color: var(--color-primary);
+      margin-right: 6px;
+    }
+    .thanks-card__tel-box {
+      border-top: 1px solid #eee;
+      padding-top: 28px;
+      margin-bottom: 28px;
+    }
+    .thanks-card__tel-label {
+      font-size: 0.8125rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 8px;
+    }
+    .thanks-card__tel-num {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.5rem;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-primary);
+      text-decoration: none;
+      margin-bottom: 8px;
+    }
+    .thanks-card__tel-num:hover {
+      text-decoration: underline;
+    }
+    .thanks-card__tel-hours {
+      font-size: 0.75rem;
+      color: var(--color-text-secondary);
+    }
+
+    /* Action Buttons */
+    .thanks-actions {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .thanks-actions__btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px 24px;
+      border-radius: 999px;
+      font-weight: var(--font-weight-bold);
+      font-size: 1rem;
+      text-decoration: none;
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+    .thanks-actions__btn--primary {
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+      color: var(--color-text-inverse);
+      box-shadow: 0 4px 15px rgba(228, 87, 16, 0.3);
+    }
+    .thanks-actions__btn--primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(228, 87, 16, 0.4);
+    }
+    .thanks-actions__btn--tel {
+      background: var(--color-bg-base);
+      color: var(--color-primary);
+      border: 2px solid var(--color-primary);
+    }
+    .thanks-actions__btn--tel:hover {
+      background: var(--color-primary);
+      color: var(--color-text-inverse);
+    }
+
+    /* Footer */
+    .footer__logo { margin-bottom: 12px; }
+    .footer__logo-main { display: block; font-size: 1.25rem; font-weight: var(--font-weight-bold); color: var(--color-primary-light); }
+    .footer__logo-sub { display: block; font-size: 0.6875rem; opacity: 0.7; }
+    .footer__address, .footer__tel, .footer__email, .footer__hours { font-size: 0.8125rem; line-height: 1.8; opacity: 0.8; }
+    .footer__tel a, .footer__email a { color: var(--color-primary-light); }
+    .footer__nav ul { display: flex; flex-direction: column; gap: 10px; }
+    .footer__nav a { font-size: 0.8125rem; opacity: 0.8; transition: opacity var(--transition-base); }
+    .footer__nav a:hover { opacity: 1; color: var(--color-primary-light); }
+    .footer__copy { border-top: 1px solid rgba(255,255,255,0.1); padding: 20px 0; text-align: center; }
+    .footer__copy p { font-size: 0.75rem; opacity: 0.6; }
+
+    @media (min-width: 768px) {
+      .page-hero__title { font-size: 2rem; }
+      .thanks-card { padding: 56px 48px; }
+      .thanks-card__title { font-size: 1.625rem; }
+      .thanks-actions { grid-template-columns: repeat(2, 1fr); }
+      .footer__inner { grid-template-columns: 1.5fr 1fr; }
+    }
+    @media (min-width: 1024px) {
+      .page-hero { padding: 80px 0; }
+      .page-hero__title { font-size: 2.25rem; }
+      .thanks-card__title { font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header__inner container">
+      <div class="header__logo">
+        <a href="/" class="header__logo-link">
+          <img src="/images/header_logo.png" alt="個別指導レビュー コードアドベンチャー 総社駅前校" class="header__logo-img">
+        </a>
+      </div>
+      <nav class="header__nav" id="nav">
+        <ul class="header__nav-list">
+          <li><a href="/about/" class="header__nav-link">レビューについて</a></li>
+          <li><a href="/course/" class="header__nav-link">コース案内</a></li>
+          <li><a href="/program/" class="header__nav-link">プログラミング</a></li>
+          <li><a href="/charge/" class="header__nav-link">料金案内</a></li>
+          <li><a href="/access/" class="header__nav-link">教室案内</a></li>
+          <li><a href="/inquiry/" class="header__nav-link">お問合せ</a></li>
+        </ul>
+      </nav>
+      <div class="header__cta">
+        <a href="tel:05017935421" class="header__cta-tel header__cta-tel--ai"><i class="fas fa-phone-alt"></i> 050-1793-5421<small>（24時間対応）</small></a>
+        <a href="/inquiry/" class="header__cta-contact"><i class="fas fa-envelope"></i> お問合せ</a>
+      </div>
+      <button class="hamburger" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu__overlay" aria-hidden="true"></div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="モバイルナビゲーション">
+    <ul class="mobile-menu__list">
+      <li><a href="/about/" class="mobile-menu__link">レビューについて</a></li>
+      <li><a href="/course/" class="mobile-menu__link">コース案内</a></li>
+      <li><a href="/program/" class="mobile-menu__link">プログラミング</a></li>
+      <li><a href="/charge/" class="mobile-menu__link">料金案内</a></li>
+      <li><a href="/access/" class="mobile-menu__link">教室案内</a></li>
+      <li><a href="/inquiry/" class="mobile-menu__link">お問合せ</a></li>
+    </ul>
+    <div class="mobile-menu__cta">
+      <a href="tel:05017935421" class="mobile-menu__cta-btn mobile-menu__cta-btn--tel mobile-menu__cta-btn--ai">
+        <i class="fas fa-phone-alt"></i>
+        050-1793-5421<small>（24時間対応）</small>
+      </a>
+      <a href="/inquiry/" class="mobile-menu__cta-btn mobile-menu__cta-btn--contact">
+        <i class="fas fa-envelope"></i>
+        お問合せはこちら
+      </a>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero__title">お問合せ完了</h1>
+      <p class="page-hero__subtitle">Thank you</p>
+    </div>
+  </section>
+
+  <!-- Thanks -->
+  <section class="thanks-section">
+    <div class="container">
+      <div class="thanks-card js-fade-in">
+        <div class="thanks-card__icon-wrap">
+          <i class="fas fa-check thanks-card__icon" aria-hidden="true"></i>
+        </div>
+        <h2 class="thanks-card__title">お問合せありがとうございました</h2>
+        <p class="thanks-card__lead">
+          お問合せを受付いたしました。<br>
+          担当者より<strong>2〜3営業日以内</strong>にご連絡いたします。<br>
+          しばらくお待ちくださいますようお願いいたします。
+        </p>
+        <div class="thanks-card__notice">
+          <i class="fas fa-info-circle" aria-hidden="true"></i>
+          ブラウザの「戻る」ボタンでこのページから戻ると、同じ内容が再送信される場合があります。トップページ等へは下のボタンからお進みください。
+        </div>
+
+        <div class="thanks-card__tel-box">
+          <p class="thanks-card__tel-label">お急ぎの場合はお電話にてお問合せください</p>
+          <a href="tel:05017935421" class="thanks-card__tel-num thanks-card__tel-num--ai">
+            <i class="fas fa-phone-alt" aria-hidden="true"></i>
+            050-1793-5421<small>（24時間対応）</small>
+          </a>
+          <p class="tel-note">※24時間対応しておりますので、いつでもお気軽にご連絡ください。</p>
+        </div>
+
+        <div class="thanks-actions">
+          <a href="/" class="thanks-actions__btn thanks-actions__btn--primary">
+            <i class="fas fa-home" aria-hidden="true"></i>
+            トップへ戻る
+          </a>
+          <a href="tel:05017935421" class="thanks-actions__btn thanks-actions__btn--tel thanks-actions__btn--tel--ai">
+            <i class="fas fa-phone-alt" aria-hidden="true"></i>
+            お電話で問合せ
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__inner container">
+      <div class="footer__info">
+        <div class="footer__logo">
+          <img src="/images/footer_logo_white.png" alt="個別指導レビュー コードアドベンチャー 総社駅前校" class="footer__logo-img">
+        </div>
+        <p class="footer__address">〒719-1136 岡山県総社市駅前2-2-10 新世紀観光ビル2F</p>
+        <p class="footer__tel">TEL: <a href="tel:05017935421">050-1793-5421</a></p>
+        <p class="tel-note">※24時間対応しておりますので、いつでもお気軽にご連絡ください。</p>
+        <p class="footer__email">Email: <a href="mailto:review@kir.biglobe.ne.jp">review@kir.biglobe.ne.jp</a></p>
+        <p class="footer__hours">受付時間: 平日14:00〜22:00 / 土13:30〜18:00 / 日定休</p>
+      </div>
+      <nav class="footer__nav">
+        <ul>
+          <li><a href="/">トップ</a></li>
+          <li><a href="/about/">レビューについて</a></li>
+          <li><a href="/course/">コース案内</a></li>
+          <li><a href="/program/">プログラミング</a></li>
+          <li><a href="/charge/">料金案内</a></li>
+          <li><a href="/access/">教室案内</a></li>
+          <li><a href="/inquiry/">お問合せ</a></li>
+          <li><a href="/privacy/">プライバシーポリシー</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer__copy">
+      <p>&copy; 2012 個別指導レビュー All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

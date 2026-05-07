@@ -1034,3 +1034,120 @@ body.menu-open {
     padding: 40px 28px;
   }
 }
+
+/* ============================================
+   AI電話 (24h) サブCTA・注記スタイル
+   ============================================ */
+/* AI電話ボタン（既存より少し小さく、サブ感を出す） */
+.header__cta-tel--ai,
+.mobile-menu__cta-btn--ai,
+.cta-band__btn--tel--ai,
+.thanks-actions__btn--tel--ai,
+.thanks-card__tel-num--ai {
+  font-size: 0.92em;
+  opacity: 0.92;
+}
+
+.header__cta-tel--ai small,
+.mobile-menu__cta-btn--ai small,
+.cta-band__btn--tel--ai small,
+.thanks-card__tel-num--ai small,
+.trial-section__contact-item small,
+.phone-contact__number small {
+  font-size: 0.72em;
+  margin-left: 4px;
+  font-weight: var(--font-weight-normal, 400);
+  opacity: 0.85;
+}
+
+/* 24時間対応の注記テキスト */
+.tel-note {
+  display: block;
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary, #666);
+  margin-top: 4px;
+  line-height: 1.6;
+}
+
+/* CTAバンド内の注記（白背景の上で読めるよう色を反転） */
+.tel-note--cta {
+  text-align: center;
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* footer内の注記は薄めに */
+.footer .tel-note {
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 8px;
+}
+
+/* ============================================
+   ヘッダー右端 はみ出し対策（PC 1280px向け）
+   ヘッダー内の AI電話ボタンのみコンパクト化。
+   mobile-menu / cta-band / footer 等の同名サブクラスには影響させない。
+   ============================================ */
+.header__cta {
+  flex-wrap: nowrap;
+}
+
+/* ヘッダー内の通常電話ボタン側も少しだけ詰めて全体収まりを確保 */
+.header__cta .header__cta-tel {
+  padding: 9px 12px;
+  gap: 5px;
+}
+
+/* ヘッダー内の AI電話ボタンはさらにコンパクトに */
+.header__cta .header__cta-tel--ai {
+  font-size: 0.78em;
+  padding: 9px 10px;
+  gap: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.header__cta .header__cta-tel--ai small {
+  font-size: 0.68em;
+  margin-left: 2px;
+  white-space: nowrap;
+}
+
+/* ヘッダー内のお問合せボタンも僅かに詰める */
+.header__cta .header__cta-contact {
+  padding: 9px 12px;
+  gap: 5px;
+}
+
+/* 1280px帯（ハンバーガー切替境界より上〜1499px）はさらに圧縮 */
+@media (min-width: 1024px) and (max-width: 1499px) {
+  .header__cta {
+    gap: 4px;
+  }
+  .header__cta .header__cta-tel,
+  .header__cta .header__cta-contact {
+    padding: 8px 8px;
+    gap: 3px;
+    font-size: 0.7rem;
+  }
+  .header__cta .header__cta-tel--ai {
+    font-size: 0.62rem;
+    padding: 8px 6px;
+    gap: 2px;
+  }
+  .header__cta .header__cta-tel--ai small {
+    font-size: 0.85em;
+    margin-left: 1px;
+  }
+  .header__cta .header__cta-tel i,
+  .header__cta .header__cta-contact i {
+    font-size: 0.9em;
+  }
+  /* nav リンクも詰めて CTA エリアの幅余裕を確保 */
+  .header__nav-link {
+    padding: 7px 6px;
+    font-size: 12px;
+  }
+  .header__nav-list {
+    gap: 2px;
+  }
+}

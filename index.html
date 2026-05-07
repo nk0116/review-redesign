@@ -4,6 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>個別指導レビュー | 学校成績保証の個別指導塾</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
   <meta name="description" content="岡山県総社市の個別指導塾「レビュー」。先生1人に生徒2人の個別授業で、学校成績保証。無料体験受付中。">
 
   <!-- Google Fonts -->
@@ -15,7 +23,221 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- Inline styles: 選ばれる理由 2本柱 + 口コミNo.1バッジ -->
+  <style>
+    /* Pillar wrapper */
+    .pillar {
+      background: #fff;
+      border-radius: 14px;
+      padding: 32px 24px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
+      border-top: 6px solid var(--color-primary);
+    }
+    .pillar--review {
+      background: linear-gradient(180deg, #FFF4E4 0%, #FFFFFF 60%);
+    }
+    .pillar__head {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+    }
+    .pillar__num {
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1;
+      flex-shrink: 0;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      letter-spacing: 0.02em;
+    }
+    .pillar__head-text { flex: 1; }
+    .pillar__kicker {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: var(--color-primary);
+      font-weight: 700;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+    .pillar__title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-text-primary, #333);
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+    .pillar__highlight {
+      color: var(--color-primary);
+    }
+    .pillar__lead {
+      font-size: 0.9375rem;
+      color: var(--color-text-secondary, #555);
+      line-height: 1.8;
+    }
+    .pillar__lead strong {
+      font-weight: 700;
+      color: var(--color-text-primary, #333);
+    }
+    .pillar__year {
+      font-size: 0.8125rem;
+      color: var(--color-text-secondary, #777);
+      margin-left: 4px;
+    }
+
+    /* Pillar1 口コミバナー */
+    .pillar__badge-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      align-items: center;
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      border: 1px dashed var(--color-primary);
+    }
+    .pillar__banner-link {
+      display: block;
+      line-height: 0;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.25s, box-shadow 0.25s, opacity 0.25s;
+    }
+    .pillar__banner-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      opacity: 0.95;
+    }
+    .pillar__banner-link:focus-visible {
+      outline: 3px solid var(--color-primary);
+      outline-offset: 3px;
+    }
+    .pillar__banner-img {
+      width: 100%;
+      max-width: 680px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    .pillar__source {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary, #555);
+      line-height: 1.8;
+    }
+    .pillar__source-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 6px;
+      color: var(--color-primary);
+      font-weight: 700;
+      text-decoration: underline;
+    }
+    .pillar__source-link:hover { opacity: 0.8; }
+
+    @media (min-width: 768px) {
+      .pillar { padding: 40px 40px; }
+      .pillar__title { font-size: 1.5rem; }
+      .pillar__num { font-size: 3rem; }
+      .pillar__badge-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 24px 28px;
+      }
+    }
+
+    /* Contact-mail note for CTA bands */
+    .cta-band__mail-note {
+      font-size: 0.8125rem;
+      color: rgba(255,255,255,0.9);
+      text-align: center;
+      margin-top: 14px;
+      line-height: 1.7;
+    }
+    .cta-band__mail-note a {
+      color: #fff;
+      text-decoration: underline;
+      font-weight: 700;
+    }
+    .cta-band__mail-note a:hover { opacity: 0.85; }
+
+    /* Footer email line */
+    .footer__brand-info a {
+      color: inherit;
+      text-decoration: underline;
+    }
+
+    /* ============================================
+       口コミNo.1バッジ（FV右上 ＋ Pillar 1内）
+       ============================================ */
+    /* FV 右上バッジ */
+    .hero__badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 3;
+      display: block;
+      width: 95px;
+      line-height: 0;
+      transition: transform 0.25s ease, filter 0.25s ease;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.18));
+    }
+    .hero__badge:hover {
+      transform: translateY(-2px) rotate(-1deg);
+      filter: drop-shadow(0 6px 14px rgba(0,0,0,0.22));
+    }
+    .hero__badge:focus-visible {
+      outline: 3px solid #fff;
+      outline-offset: 3px;
+      border-radius: 50%;
+    }
+    .hero__badge-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    @media (min-width: 768px) {
+      .hero__badge {
+        top: 24px;
+        right: 24px;
+        width: 165px;
+      }
+    }
+
+    /* Pillar 1 内バッジ */
+    .pillar__no1-badge {
+      display: block;
+      width: 220px;
+      max-width: 60%;
+      margin: 0 auto 20px;
+      line-height: 0;
+      transition: transform 0.25s ease, filter 0.25s ease;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.12));
+    }
+    .pillar__no1-badge:hover {
+      transform: translateY(-2px) scale(1.02);
+      filter: drop-shadow(0 6px 16px rgba(0,0,0,0.18));
+    }
+    .pillar__no1-badge:focus-visible {
+      outline: 3px solid var(--color-primary);
+      outline-offset: 4px;
+      border-radius: 50%;
+    }
+    .pillar__no1-badge-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    @media (min-width: 768px) {
+      .pillar__no1-badge {
+        width: 280px;
+        margin-bottom: 24px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -25,28 +247,28 @@
   <header class="header">
     <div class="container header__inner">
       <div class="header__logo">
-        <a href="index.html" class="header__logo-link">
-          <img src="images/header_logo.png" alt="個別指導レビュー コードアドベンチャー 総社駅前校" class="header__logo-img">
+        <a href="/" class="header__logo-link">
+          <img src="/images/header_logo.png" alt="個別指導レビュー コードアドベンチャー 総社駅前校" class="header__logo-img">
         </a>
       </div>
 
       <nav class="header__nav" aria-label="メインナビゲーション">
         <ul class="header__nav-list">
-          <li><a href="about.html" class="header__nav-link">レビューについて</a></li>
-          <li><a href="course.html" class="header__nav-link">コース案内</a></li>
-          <li><a href="program.html" class="header__nav-link">プログラミング</a></li>
-          <li><a href="charge.html" class="header__nav-link">料金</a></li>
-          <li><a href="access.html" class="header__nav-link">教室案内</a></li>
-          <li><a href="inquiry.html" class="header__nav-link">お問合せ</a></li>
+          <li><a href="/about/" class="header__nav-link">レビューについて</a></li>
+          <li><a href="/course/" class="header__nav-link">コース案内</a></li>
+          <li><a href="/program/" class="header__nav-link">プログラミング</a></li>
+          <li><a href="/charge/" class="header__nav-link">料金案内</a></li>
+          <li><a href="/access/" class="header__nav-link">教室案内</a></li>
+          <li><a href="/inquiry/" class="header__nav-link">お問合せ</a></li>
         </ul>
       </nav>
 
       <div class="header__cta">
-        <a href="tel:0866952100" class="header__cta-tel">
+        <a href="tel:05017935421" class="header__cta-tel header__cta-tel--ai">
           <i class="fas fa-phone-alt"></i>
-          0866-95-2100
+          050-1793-5421<small>（24時間対応）</small>
         </a>
-        <a href="inquiry.html" class="header__cta-contact">
+        <a href="/inquiry/" class="header__cta-contact">
           <i class="fas fa-envelope"></i>
           お問合せ
         </a>
@@ -64,19 +286,19 @@
   <div class="mobile-menu__overlay" aria-hidden="true"></div>
   <nav class="mobile-menu" id="mobile-menu" aria-label="モバイルナビゲーション">
     <ul class="mobile-menu__list">
-      <li><a href="about.html" class="mobile-menu__link">レビューについて</a></li>
-      <li><a href="course.html" class="mobile-menu__link">コース案内</a></li>
-      <li><a href="program.html" class="mobile-menu__link">プログラミング</a></li>
-      <li><a href="charge.html" class="mobile-menu__link">料金</a></li>
-      <li><a href="access.html" class="mobile-menu__link">教室案内</a></li>
-      <li><a href="inquiry.html" class="mobile-menu__link">お問合せ</a></li>
+      <li><a href="/about/" class="mobile-menu__link">レビューについて</a></li>
+      <li><a href="/course/" class="mobile-menu__link">コース案内</a></li>
+      <li><a href="/program/" class="mobile-menu__link">プログラミング</a></li>
+      <li><a href="/charge/" class="mobile-menu__link">料金案内</a></li>
+      <li><a href="/access/" class="mobile-menu__link">教室案内</a></li>
+      <li><a href="/inquiry/" class="mobile-menu__link">お問合せ</a></li>
     </ul>
     <div class="mobile-menu__cta">
-      <a href="tel:0866952100" class="mobile-menu__cta-btn mobile-menu__cta-btn--tel">
+      <a href="tel:05017935421" class="mobile-menu__cta-btn mobile-menu__cta-btn--tel mobile-menu__cta-btn--ai">
         <i class="fas fa-phone-alt"></i>
-        0866-95-2100
+        050-1793-5421<small>（24時間対応）</small>
       </a>
-      <a href="inquiry.html" class="mobile-menu__cta-btn mobile-menu__cta-btn--contact">
+      <a href="/inquiry/" class="mobile-menu__cta-btn mobile-menu__cta-btn--contact">
         <i class="fas fa-envelope"></i>
         お問合せはこちら
       </a>
@@ -89,6 +311,9 @@
          Hero / Main Visual
          ============================================ -->
     <section class="hero">
+      <a href="https://review-rank.jp/lp/kobetsu-review/?utm_source=homepage&amp;utm_medium=ban" target="_blank" rel="noopener noreferrer" class="hero__badge" aria-label="口コミ数No.1 総社市学習塾 2025年11月度 ― 口コミ評価研究所のページを別ウィンドウで開きます">
+        <img src="/images/kuchikomi-no1.png" alt="口コミ数No.1 総社市学習塾 2025年11月度" class="hero__badge-img" width="515" height="525" loading="eager">
+      </a>
       <div class="container hero__inner">
         <h1 class="hero__catch">
           <em>「分からない、できない」</em>は<br>大歓迎です!
@@ -97,7 +322,7 @@
           大手個別指導塾で長年培ってきた経験と実績から生まれた<br>
           個別指導システムで、お子さまの成績アップを実現します。
         </p>
-        <a href="inquiry.html" class="hero__cta">
+        <a href="/inquiry/" class="hero__cta">
           無料体験はこちら
           <i class="fas fa-arrow-right"></i>
         </a>
@@ -145,7 +370,7 @@
     </section>
 
     <!-- ============================================
-         Features Section
+         Features Section (2本柱: 第三者評価 + 指導成果)
          ============================================ -->
     <section class="section" id="about">
       <div class="container">
@@ -157,53 +382,86 @@
           </h2>
         </div>
 
-        <div class="features__grid">
-          <div class="feature-card js-fade-in">
-            <div class="feature-card__icon">
-              <i class="fas fa-user-friends"></i>
+        <!-- Pillar 1: 第三者評価（口コミ評価研究所による徹底解説） -->
+        <div class="pillar pillar--review js-fade-in">
+          <div class="pillar__head">
+            <span class="pillar__num">01</span>
+            <div class="pillar__head-text">
+              <p class="pillar__kicker">Pillar 1 ／ 第三者評価</p>
+              <h3 class="pillar__title">第三者サイトで<span class="pillar__highlight">高評価の理由を徹底解説</span></h3>
+              <p class="pillar__lead">
+                口コミ評価研究所（review-rank.jp）のインタビューで、レビュー代表が“勉強が好きになる塾”としての高評価の理由を語っています。
+              </p>
             </div>
-            <h3 class="feature-card__title">先生1人に生徒2人の<br>個別授業</h3>
-            <p class="feature-card__text">きめ細やかな指導が可能。分からないところをその場で質問でき、理解が深まります。</p>
           </div>
-
-          <div class="feature-card js-fade-in">
-            <div class="feature-card__icon">
-              <i class="fas fa-clock"></i>
-            </div>
-            <h3 class="feature-card__title">曜日・時間帯・回数を<br>自由選択</h3>
-            <p class="feature-card__text">部活や習い事に合わせて、通塾スケジュールを自由にカスタマイズできます。</p>
+          <div class="pillar__badge-row">
+            <a href="https://review-rank.jp/lp/kobetsu-review/?utm_source=homepage&amp;utm_medium=ban" target="_blank" rel="noopener noreferrer" class="pillar__no1-badge" aria-label="口コミ数No.1 総社市学習塾 2025年11月度 ― 口コミ評価研究所のページを別ウィンドウで開きます">
+              <img src="/images/kuchikomi-no1.png" alt="口コミ数No.1 総社市学習塾 2025年11月度" class="pillar__no1-badge-img" width="515" height="525" loading="lazy">
+            </a>
+            <a href="https://review-rank.jp/lp/kobetsu-review/?utm_source=homepage&amp;utm_medium=ban" target="_blank" rel="noopener noreferrer" class="pillar__banner-link" aria-label="口コミ評価研究所のインタビューで高評価の理由を徹底解説（別ウィンドウで開きます）">
+              <picture>
+                <source media="(min-width: 768px)" srcset="images/bnrYoutubeBtmPc.jpg">
+                <source media="(max-width: 767px)" srcset="images/bnrYoutubeBtmSp.jpg">
+                <img src="/images/bnrYoutubeBtmPc.jpg" alt="“わかるまで”とことん寄り添う個別指導レビュー練尾代表が語る“勉強が好きになる塾” 高評価の理由を徹底解説 口コミ評価研究所がインタビュー" class="pillar__banner-img" width="680" height="219" loading="lazy">
+              </picture>
+            </a>
+            <p class="pillar__source">
+              第三者の口コミ評価研究所による代表インタビューで、レビューの指導方針と“勉強が好きになる”仕組みを徹底解説いただきました。実際の保護者・生徒様の声とあわせて、ぜひご覧ください。<br>
+              <a href="https://review-rank.jp/lp/kobetsu-review/?utm_source=homepage&amp;utm_medium=ban" target="_blank" rel="noopener noreferrer" class="pillar__source-link">
+                <i class="fas fa-external-link-alt"></i> review-rank.jp でインタビューを見る
+              </a>
+            </p>
           </div>
+        </div>
 
-          <div class="feature-card js-fade-in">
-            <div class="feature-card__icon">
-              <i class="fas fa-file-alt"></i>
+        <!-- Pillar 2: 指導成果（成績保証など） -->
+        <div class="pillar pillar--result js-fade-in">
+          <div class="pillar__head">
+            <span class="pillar__num">02</span>
+            <div class="pillar__head-text">
+              <p class="pillar__kicker">Pillar 2 ／ 指導現場の成果</p>
+              <h3 class="pillar__title">学校成績<span class="pillar__highlight">+20点保証</span>の個別指導</h3>
+              <p class="pillar__lead">
+                先生1人に生徒2人のきめ細やかな指導と、家庭学習までサポートする体制で、確かな成果を約束します。
+              </p>
             </div>
-            <h3 class="feature-card__title">1人ひとりにピッタリの<br>個別カリキュラム</h3>
-            <p class="feature-card__text">お子さまの学力・目標に合わせた完全オーダーメイドのカリキュラムを作成します。</p>
           </div>
-
-          <div class="feature-card js-fade-in">
-            <div class="feature-card__icon">
-              <i class="fas fa-hands-helping"></i>
+          <div class="features__grid">
+            <div class="feature-card">
+              <div class="feature-card__icon"><i class="fas fa-user-friends"></i></div>
+              <h3 class="feature-card__title">先生1人に生徒2人の<br>個別授業</h3>
+              <p class="feature-card__text">きめ細やかな指導が可能。分からないところをその場で質問でき、理解が深まります。</p>
             </div>
-            <h3 class="feature-card__title">講師+アドバイザーの<br>ダブルサポート</h3>
-            <p class="feature-card__text">授業を担当する講師に加え、学習アドバイザーが進路相談や学習計画をサポートします。</p>
-          </div>
 
-          <div class="feature-card js-fade-in">
-            <div class="feature-card__icon">
-              <i class="fas fa-book-open"></i>
+            <div class="feature-card">
+              <div class="feature-card__icon"><i class="fas fa-clock"></i></div>
+              <h3 class="feature-card__title">曜日・時間帯・回数を<br>自由選択</h3>
+              <p class="feature-card__text">部活や習い事に合わせて、通塾スケジュールを自由にカスタマイズできます。</p>
             </div>
-            <h3 class="feature-card__title">家庭学習指導と<br>テスト対策</h3>
-            <p class="feature-card__text">塾の授業だけでなく、家庭学習の仕方も指導。定期テスト前には集中対策授業も実施します。</p>
-          </div>
 
-          <div class="feature-card js-fade-in">
-            <div class="feature-card__icon">
-              <i class="fas fa-laptop-house"></i>
+            <div class="feature-card">
+              <div class="feature-card__icon"><i class="fas fa-file-alt"></i></div>
+              <h3 class="feature-card__title">1人ひとりにピッタリの<br>個別カリキュラム</h3>
+              <p class="feature-card__text">お子さまの学力・目標に合わせた完全オーダーメイドのカリキュラムを作成します。</p>
             </div>
-            <h3 class="feature-card__title">無料で使える<br>快適自習空間</h3>
-            <p class="feature-card__text">授業日以外も自由に使える自習スペースを完備。集中できる環境で学力アップ。</p>
+
+            <div class="feature-card">
+              <div class="feature-card__icon"><i class="fas fa-hands-helping"></i></div>
+              <h3 class="feature-card__title">講師+アドバイザーの<br>ダブルサポート</h3>
+              <p class="feature-card__text">授業を担当する講師に加え、学習アドバイザーが進路相談や学習計画をサポートします。</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-card__icon"><i class="fas fa-book-open"></i></div>
+              <h3 class="feature-card__title">家庭学習指導と<br>テスト対策</h3>
+              <p class="feature-card__text">塾の授業だけでなく、家庭学習の仕方も指導。定期テスト前には集中対策授業も実施します。</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-card__icon"><i class="fas fa-laptop-house"></i></div>
+              <h3 class="feature-card__title">無料で使える<br>快適自習空間</h3>
+              <p class="feature-card__text">授業日以外も自由に使える自習スペースを完備。集中できる環境で学力アップ。</p>
+            </div>
           </div>
         </div>
       </div>
@@ -229,7 +487,7 @@
               <span class="course-card__tag">小学生</span>
               <h3 class="course-card__title">満点コース・教科書徹底指導</h3>
               <p class="course-card__text">学校の授業内容を完全理解。教科書に沿った指導で、テストで満点を目指します。</p>
-              <a href="course.html" class="course-card__link">
+              <a href="/course/" class="course-card__link">
                 詳しく見る <i class="fas fa-arrow-right"></i>
               </a>
             </div>
@@ -241,7 +499,7 @@
               <span class="course-card__tag">中学生</span>
               <h3 class="course-card__title">5教科セット・成績保証</h3>
               <p class="course-card__text">5教科をバランスよく学習。成績保証制度で確実な成績アップをお約束します。</p>
-              <a href="course.html" class="course-card__link">
+              <a href="/course/" class="course-card__link">
                 詳しく見る <i class="fas fa-arrow-right"></i>
               </a>
             </div>
@@ -253,7 +511,7 @@
               <span class="course-card__tag">高校生</span>
               <h3 class="course-card__title">映像個別・トップ講師</h3>
               <p class="course-card__text">映像授業と個別指導を組み合わせ、大学受験に向けた効率的な学習を実現します。</p>
-              <a href="course.html" class="course-card__link">
+              <a href="/course/" class="course-card__link">
                 詳しく見る <i class="fas fa-arrow-right"></i>
               </a>
             </div>
@@ -265,7 +523,7 @@
               <span class="course-card__tag">プログラミング</span>
               <h3 class="course-card__title">マイクラで楽しく学ぶ</h3>
               <p class="course-card__text">マインクラフトの世界でプログラミングを楽しく学習。論理的思考力を育みます。</p>
-              <a href="program.html" class="course-card__link">
+              <a href="/program/" class="course-card__link">
                 詳しく見る <i class="fas fa-arrow-right"></i>
               </a>
             </div>
@@ -273,6 +531,10 @@
         </div>
       </div>
     </section>
+
+    <!-- ============================================
+         Reviews Link セクションは Pillar 1（第三者評価）に統合済みのため削除
+         ============================================ -->
 
     <!-- ============================================
          Video Section
@@ -290,9 +552,10 @@
         <div class="video__wrapper js-fade-in">
           <div class="video__embed">
             <iframe
-              src="https://www.youtube.com/embed/q0jem3r4L6Q"
+              src="https://www.youtube.com/embed/q0jem3r4L6Q?si=5FXgbG8GxDK2zTNi"
               title="個別指導レビュー 紹介動画"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen
               loading="lazy"
             ></iframe>
@@ -329,11 +592,14 @@
             <h3 class="access__info-title">個別指導レビュー</h3>
             <div class="access__info-item">
               <i class="fas fa-map-marker-alt"></i>
-              <span>〒719-1126<br>岡山県総社市駅前2-2-10<br>新世紀観光ビル2F</span>
+              <span>〒719-1136<br>岡山県総社市駅前2-2-10<br>新世紀観光ビル2F</span>
             </div>
             <div class="access__info-item">
               <i class="fas fa-phone-alt"></i>
-              <span><a href="tel:0866952100">0866-95-2100</a></span>
+              <span>
+                <a href="tel:05017935421">050-1793-5421</a>
+                <span class="tel-note">※24時間対応しておりますので、いつでもお気軽にご連絡ください。</span>
+              </span>
             </div>
             <div class="access__info-item">
               <i class="fas fa-envelope"></i>
@@ -341,7 +607,7 @@
             </div>
             <div class="access__info-item">
               <i class="fas fa-clock"></i>
-              <span>受付時間: 14:00〜21:00</span>
+              <span>受付時間: 平日14:00〜22:00 / 土13:30〜18:00 / 日定休</span>
             </div>
           </div>
         </div>
@@ -358,15 +624,20 @@
           お気軽にお問合せください
         </p>
         <div class="cta-band__buttons">
-          <a href="tel:0866952100" class="cta-band__btn cta-band__btn--tel">
+          <a href="tel:05017935421" class="cta-band__btn cta-band__btn--tel cta-band__btn--tel--ai">
             <i class="fas fa-phone-alt"></i>
-            0866-95-2100
+            050-1793-5421<small>（24時間対応）</small>
           </a>
-          <a href="inquiry.html" class="cta-band__btn cta-band__btn--contact">
+          <a href="/inquiry/" class="cta-band__btn cta-band__btn--contact">
             <i class="fas fa-envelope"></i>
             お問合せはこちら
           </a>
         </div>
+        <p class="tel-note tel-note--cta">※24時間対応しておりますので、いつでもお気軽にご連絡ください。</p>
+        <p class="cta-band__mail-note">
+          電話が苦手な方はメールでも受付中:
+          <a href="mailto:review@kir.biglobe.ne.jp">review@kir.biglobe.ne.jp</a>
+        </p>
       </div>
     </section>
 
@@ -378,31 +649,34 @@
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <img src="images/footer_logo_white.png" alt="個別指導レビュー コードアドベンチャー 総社駅前校" class="footer__logo-img">
+        <img src="/images/footer_logo_white.png" alt="個別指導レビュー コードアドベンチャー 総社駅前校" class="footer__logo-img">
         <p class="footer__brand-info">
-          〒719-1126<br>
+          〒719-1136<br>
           岡山県総社市駅前2-2-10<br>
           新世紀観光ビル2F<br>
-          TEL: <a href="tel:0866952100">0866-95-2100</a><br>
-          受付時間: 14:00〜21:00
+          TEL: <a href="tel:05017935421">050-1793-5421</a><br>
+          <span class="tel-note">※24時間対応しておりますので、いつでもお気軽にご連絡ください。</span><br>
+          Email: <a href="mailto:review@kir.biglobe.ne.jp">review@kir.biglobe.ne.jp</a><br>
+          受付時間: 平日14:00〜22:00 / 土13:30〜18:00 / 日定休
         </p>
       </div>
 
       <div class="footer__nav-group">
         <p class="footer__nav-title">メニュー</p>
         <ul class="footer__nav-list">
-          <li><a href="about.html" class="footer__nav-link">レビューについて</a></li>
-          <li><a href="course.html" class="footer__nav-link">コース案内</a></li>
-          <li><a href="program.html" class="footer__nav-link">プログラミング</a></li>
+          <li><a href="/about/" class="footer__nav-link">レビューについて</a></li>
+          <li><a href="/course/" class="footer__nav-link">コース案内</a></li>
+          <li><a href="/program/" class="footer__nav-link">プログラミング</a></li>
         </ul>
       </div>
 
       <div class="footer__nav-group">
         <p class="footer__nav-title">その他</p>
         <ul class="footer__nav-list">
-          <li><a href="charge.html" class="footer__nav-link">料金</a></li>
-          <li><a href="access.html" class="footer__nav-link">教室案内</a></li>
-          <li><a href="inquiry.html" class="footer__nav-link">お問合せ</a></li>
+          <li><a href="/charge/" class="footer__nav-link">料金案内</a></li>
+          <li><a href="/access/" class="footer__nav-link">教室案内</a></li>
+          <li><a href="/inquiry/" class="footer__nav-link">お問合せ</a></li>
+          <li><a href="/privacy/" class="footer__nav-link">プライバシーポリシー</a></li>
         </ul>
       </div>
     </div>
@@ -415,6 +689,6 @@
   </footer>
 
   <!-- JavaScript -->
-  <script src="js/main.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 </html>

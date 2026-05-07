@@ -4,12 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>お問合せ | 個別指導レビュー</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <meta name="description" content="個別指導レビューへのお問合せ。無料体験授業・入塾相談など、お気軽にご連絡ください。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
   <style>
     /* Page Hero */
     .page-hero {
@@ -190,6 +197,51 @@
       color: var(--color-text-secondary);
     }
 
+    /* Email Contact */
+    .email-contact {
+      background: var(--color-bg-base);
+      border-radius: var(--border-radius-md);
+      padding: 40px 28px;
+      box-shadow: var(--shadow-card);
+      text-align: center;
+      margin-top: 24px;
+    }
+    .email-contact__icon {
+      width: 72px;
+      height: 72px;
+      background-color: var(--color-bg-warm);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 1.75rem;
+      color: var(--color-primary);
+    }
+    .email-contact__title {
+      font-size: 1.125rem;
+      font-weight: var(--font-weight-bold);
+      margin-bottom: 16px;
+      color: var(--color-text-primary);
+    }
+    .email-contact__address {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.125rem;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-primary);
+      margin-bottom: 12px;
+      word-break: break-all;
+    }
+    .email-contact__address a {
+      color: var(--color-primary);
+    }
+    .email-contact__note {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+    }
+
     /* Footer */
     .footer__logo { margin-bottom: 12px; }
     .footer__logo-main { display: block; font-size: 1.25rem; font-weight: var(--font-weight-bold); color: var(--color-primary-light); }
@@ -219,23 +271,23 @@
   <header class="header" id="header">
     <div class="header__inner container">
       <div class="header__logo">
-        <a href="index.html" class="header__logo-link">
-          <img src="images/header_logo.png" alt="個別指導レビュー コードアドベンチャー 総社駅前校" class="header__logo-img">
+        <a href="/" class="header__logo-link">
+          <img src="/images/header_logo.png" alt="個別指導レビュー コードアドベンチャー 総社駅前校" class="header__logo-img">
         </a>
       </div>
       <nav class="header__nav" id="nav">
         <ul class="header__nav-list">
-          <li><a href="about.html" class="header__nav-link">レビューについて</a></li>
-          <li><a href="course.html" class="header__nav-link">コース案内</a></li>
-          <li><a href="program.html" class="header__nav-link">プログラミング</a></li>
-          <li><a href="charge.html" class="header__nav-link">料金案内</a></li>
-          <li><a href="access.html" class="header__nav-link">教室案内</a></li>
-          <li><a href="inquiry.html" class="header__nav-link">お問合せ</a></li>
+          <li><a href="/about/" class="header__nav-link">レビューについて</a></li>
+          <li><a href="/course/" class="header__nav-link">コース案内</a></li>
+          <li><a href="/program/" class="header__nav-link">プログラミング</a></li>
+          <li><a href="/charge/" class="header__nav-link">料金案内</a></li>
+          <li><a href="/access/" class="header__nav-link">教室案内</a></li>
+          <li><a href="/inquiry/" class="header__nav-link">お問合せ</a></li>
         </ul>
       </nav>
       <div class="header__cta">
-        <a href="tel:0866-95-2100" class="header__cta-tel"><i class="fas fa-phone-alt"></i> 0866-95-2100</a>
-        <a href="inquiry.html" class="header__cta-contact"><i class="fas fa-envelope"></i> お問合せ</a>
+        <a href="tel:05017935421" class="header__cta-tel header__cta-tel--ai"><i class="fas fa-phone-alt"></i> 050-1793-5421<small>（24時間対応）</small></a>
+        <a href="/inquiry/" class="header__cta-contact"><i class="fas fa-envelope"></i> お問合せ</a>
       </div>
       <button class="hamburger" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
         <span class="hamburger__line"></span>
@@ -249,19 +301,19 @@
   <div class="mobile-menu__overlay" aria-hidden="true"></div>
   <nav class="mobile-menu" id="mobile-menu" aria-label="モバイルナビゲーション">
     <ul class="mobile-menu__list">
-      <li><a href="about.html" class="mobile-menu__link">レビューについて</a></li>
-      <li><a href="course.html" class="mobile-menu__link">コース案内</a></li>
-      <li><a href="program.html" class="mobile-menu__link">プログラミング</a></li>
-      <li><a href="charge.html" class="mobile-menu__link">料金</a></li>
-      <li><a href="access.html" class="mobile-menu__link">教室案内</a></li>
-      <li><a href="inquiry.html" class="mobile-menu__link">お問合せ</a></li>
+      <li><a href="/about/" class="mobile-menu__link">レビューについて</a></li>
+      <li><a href="/course/" class="mobile-menu__link">コース案内</a></li>
+      <li><a href="/program/" class="mobile-menu__link">プログラミング</a></li>
+      <li><a href="/charge/" class="mobile-menu__link">料金案内</a></li>
+      <li><a href="/access/" class="mobile-menu__link">教室案内</a></li>
+      <li><a href="/inquiry/" class="mobile-menu__link">お問合せ</a></li>
     </ul>
     <div class="mobile-menu__cta">
-      <a href="tel:0866952100" class="mobile-menu__cta-btn mobile-menu__cta-btn--tel">
+      <a href="tel:05017935421" class="mobile-menu__cta-btn mobile-menu__cta-btn--tel mobile-menu__cta-btn--ai">
         <i class="fas fa-phone-alt"></i>
-        0866-95-2100
+        050-1793-5421<small>（24時間対応）</small>
       </a>
-      <a href="inquiry.html" class="mobile-menu__cta-btn mobile-menu__cta-btn--contact">
+      <a href="/inquiry/" class="mobile-menu__cta-btn mobile-menu__cta-btn--contact">
         <i class="fas fa-envelope"></i>
         お問合せはこちら
       </a>
@@ -283,10 +335,12 @@
         <!-- Form -->
         <div class="contact-form js-fade-in">
           <h2 class="contact-form__title">お問合せフォーム</h2>
-          <form action="https://formsubmit.co/n0116kazuma@gmail.com" method="POST">
+          <!-- 本番送信先: 塾メアド review@kir.biglobe.ne.jp / FormSubmit初回は認証メール(承認リンク)が届くので塾側でクリック承認が必要 -->
+          <!-- テスト用切り戻し候補(ねりさん宛): https://formsubmit.co/n0116kazuma@gmail.com -->
+          <form action="https://formsubmit.co/review@kir.biglobe.ne.jp" method="POST">
             <input type="hidden" name="_subject" value="【個別指導レビュー】お問合せがありました">
             <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://nk0116.github.io/review-redesign/inquiry.html?sent=true">
+            <input type="hidden" name="_next" value="https://nk0116.github.io/review-redesign/inquiry/thanks/">
             <input type="hidden" name="_template" value="table">
             <div class="form-group">
               <label class="form-group__label" for="name">
@@ -352,14 +406,25 @@
           </form>
         </div>
 
-        <!-- Phone -->
-        <div class="phone-contact js-fade-in">
-          <div class="phone-contact__icon"><i class="fas fa-phone-alt"></i></div>
-          <h3 class="phone-contact__title">お電話でのお問合せ</h3>
-          <p class="phone-contact__number">
-            <a href="tel:0866-95-2100">0866-95-2100</a>
-          </p>
-          <p class="phone-contact__hours">受付時間: 14:00〜21:00</p>
+        <!-- Phone + Email -->
+        <div>
+          <div class="phone-contact js-fade-in">
+            <div class="phone-contact__icon"><i class="fas fa-phone-alt"></i></div>
+            <h3 class="phone-contact__title">お電話でのお問合せ</h3>
+            <p class="phone-contact__number">
+              <a href="tel:05017935421">050-1793-5421</a>
+            </p>
+            <p class="tel-note">※24時間対応しておりますので、いつでもお気軽にご連絡ください。</p>
+          </div>
+
+          <div class="email-contact js-fade-in">
+            <div class="email-contact__icon"><i class="fas fa-envelope"></i></div>
+            <h3 class="email-contact__title">メールでのお問合せ</h3>
+            <p class="email-contact__address">
+              <a href="mailto:review@kir.biglobe.ne.jp">review@kir.biglobe.ne.jp</a>
+            </p>
+            <p class="email-contact__note">フォームの代わりに直接メールでもお問合せいただけます。</p>
+          </div>
         </div>
       </div>
     </div>
@@ -370,22 +435,24 @@
     <div class="footer__inner container">
       <div class="footer__info">
         <div class="footer__logo">
-          <img src="images/footer_logo_white.png" alt="個別指導レビュー コードアドベンチャー 総社駅前校" class="footer__logo-img">
+          <img src="/images/footer_logo_white.png" alt="個別指導レビュー コードアドベンチャー 総社駅前校" class="footer__logo-img">
         </div>
         <p class="footer__address">〒719-1136 岡山県総社市駅前2-2-10 新世紀観光ビル2F</p>
-        <p class="footer__tel">TEL: <a href="tel:0866-95-2100">0866-95-2100</a></p>
+        <p class="footer__tel">TEL: <a href="tel:05017935421">050-1793-5421</a></p>
+        <p class="tel-note">※24時間対応しておりますので、いつでもお気軽にご連絡ください。</p>
         <p class="footer__email">Email: <a href="mailto:review@kir.biglobe.ne.jp">review@kir.biglobe.ne.jp</a></p>
-        <p class="footer__hours">受付時間: 14:00〜21:00</p>
+        <p class="footer__hours">受付時間: 平日14:00〜22:00 / 土13:30〜18:00 / 日定休</p>
       </div>
       <nav class="footer__nav">
         <ul>
-          <li><a href="index.html">トップ</a></li>
-          <li><a href="about.html">レビューについて</a></li>
-          <li><a href="course.html">コース案内</a></li>
-          <li><a href="program.html">プログラミング</a></li>
-          <li><a href="charge.html">料金案内</a></li>
-          <li><a href="access.html">教室案内</a></li>
-          <li><a href="inquiry.html">お問合せ</a></li>
+          <li><a href="/">トップ</a></li>
+          <li><a href="/about/">レビューについて</a></li>
+          <li><a href="/course/">コース案内</a></li>
+          <li><a href="/program/">プログラミング</a></li>
+          <li><a href="/charge/">料金案内</a></li>
+          <li><a href="/access/">教室案内</a></li>
+          <li><a href="/inquiry/">お問合せ</a></li>
+          <li><a href="/privacy/">プライバシーポリシー</a></li>
         </ul>
       </nav>
     </div>
@@ -394,7 +461,7 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="/js/main.js"></script>
   <script>
     if (window.location.search.includes('sent=true')) {
       const form = document.querySelector('.contact-form');
